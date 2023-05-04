@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="177.33333333" prefWidth="570.0" style="-fx-background-color: #fafce8;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Patient.controller.AppointmentCardLayoutController">
+   <children>
+      <VBox layoutX="7.0" prefHeight="167.0" prefWidth="557.0" style="-fx-background-color: #fafce8;">
+         <children>
+            <AnchorPane prefHeight="47.0" prefWidth="570.0" style="-fx-pref-width: 200;">
+               <children>
+                  <Label fx:id="appointmentLabel" layoutY="12.0" prefHeight="36.0" prefWidth="201.0" text="Appointment :" textFill="#171a6e">
+                     <font>
+                        <Font size="25.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="timeStampLabel" layoutX="383.0" layoutY="24.0" prefHeight="17.0" prefWidth="141.0" text="Time" textFill="#171a6e" />
+               </children>
+            </AnchorPane>
+            <Separator prefWidth="400.0" style="-fx-background-color: #bb54ff;" />
+            <AnchorPane prefHeight="25.0" prefWidth="570.0">
+               <children>
+                  <Label prefHeight="25.0" prefWidth="70.0" text="Status :" textFill="#171a6e">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="191.0" layoutY="1.0" prefHeight="25.0" prefWidth="85.0" text="From :" textFill="#171a6e">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="381.0" layoutY="1.0" prefHeight="25.0" prefWidth="85.0" text="To :" textFill="#171a6e">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="fromTimeLabel" layoutX="234.0" layoutY="1.0" prefHeight="25.0" prefWidth="124.0" text="00:00" textFill="#01ff84" />
+                  <Label fx:id="statusLabel" layoutX="64.0" prefHeight="26.0" prefWidth="102.0" text="Pending" textFill="#650e35">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="toTimeLabel" layoutX="404.0" layoutY="1.0" prefHeight="25.0" prefWidth="124.0" text="00:00" textFill="#01ff84" />
+               </children>
+            </AnchorPane>
+            <Separator prefWidth="200.0" style="-fx-background-color: #bb54ff;" />
+            <AnchorPane prefHeight="56.0" prefWidth="570.0">
+               <children>
+                  <Label fx:id="memoLabel" alignment="TOP_LEFT" layoutX="256.0" layoutY="1.0" prefHeight="95.0" prefWidth="301.0" text="Memo :" textFill="#b24dfa" />
+                  <Label fx:id="doctorNameLabel" alignment="TOP_LEFT" layoutX="85.0" layoutY="3.0" prefHeight="54.0" prefWidth="165.0" style="-fx-background-color: #fafce8;" text="Doctor :" textFill="#171a6e">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+                  <ImageView fx:id="doctorImage" fitHeight="95.0" fitWidth="85.0" layoutY="1.0" pickOnBounds="true" preserveRatio="true" />
+                  <Label fx:id="doctorTypeLabel" layoutX="85.0" layoutY="55.0" prefHeight="27.0" prefWidth="165.0" style="-fx-background-color: #fafce8;" text=" Type :" textFill="#171a6e">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

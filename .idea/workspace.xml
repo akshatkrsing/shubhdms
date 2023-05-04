@@ -1,11 +1,73 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4ef21294-6626-4945-8da7-382307a79831" name="Changes" comment="" />
+    <list default="true" id="4ef21294-6626-4945-8da7-382307a79831" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Patient/controller/AppointmentCardLayoutController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Patient/controller/BulletinController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Patient/controller/DutyChartCardLayoutFXMLController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Patient/controller/LoginController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Patient/controller/ProfileScreenController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Patient/controller/RegisterController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Patient/controller/SingleNotificationCardFXMLController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Patient/css/tabs.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Patient/entity/Appointment.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Patient/entity/Bulletin.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Patient/entity/Doctor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Patient/entity/DutyChartRow.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Patient/entity/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Patient/entity/Message.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Patient/entity/Notification.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Patient/fxml/AppointmentCardFXML.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Patient/fxml/Bulletin.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Patient/fxml/Login.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Patient/fxml/ProfileScreen.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Patient/fxml/Register.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Patient/request/AppointmentListRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Patient/request/BookAppointmentRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Patient/request/BulletinRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Patient/request/ChangePasswordRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Patient/request/ChangeProfilePicRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Patient/request/DutyChartRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Patient/request/GetNotificationRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Patient/request/GetProfilePicRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Patient/request/LogOutRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Patient/request/LoginRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Patient/request/RegisterRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Patient/request/Request.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Patient/response/AppointmentListResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Patient/response/BookAppointmentResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Patient/response/BulletinResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Patient/response/ChangePasswordResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Patient/response/ChangeProfilePicResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Patient/response/DutyChartResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Patient/response/GetNotificationResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Patient/response/GetProfilePicResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Patient/response/LogOutResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Patient/response/LoginResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Patient/response/RegisterResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Patient/response/Response.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Patient/util/GuiUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Patient/util/HashUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shubhdms.iml" beforeDir="false" afterPath="$PROJECT_DIR$/shubhdms.iml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="2P6Jisl9iWN0cG1JNrzwg8R6rAN" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -16,9 +78,43 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true"
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "last_opened_file_path": "C:/Users/Akshat/IdeaProjects/shubhdms/Patient/util",
+    "project.structure.last.edited": "SDKs",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.38965517",
+    "settings.editor.selected.configurable": "reference.projectsettings.compiler.javacompiler"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Akshat\IdeaProjects\shubhdms\Patient\util" />
+      <recent name="C:\Users\Akshat\IdeaProjects\shubhdms\Patient\css" />
+      <recent name="C:\Users\Akshat\IdeaProjects\shubhdms\Patient\request" />
+      <recent name="C:\Users\Akshat\IdeaProjects\shubhdms\Patient\response" />
+      <recent name="C:\Users\Akshat\IdeaProjects\shubhdms\Patient\controller" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="Patient.entity" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="Main" type="Application" factoryName="Application" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Patient.entity.Main" />
+      <module name="shubhdms" />
+      <option name="VM_PARAMETERS" value="--module-path &quot;C:\Users\Akshat\Documents\javafx-sdk-19\lib&quot; --add-modules=javafx.controls,javafx.graphics,javafx.fxml" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Patient.entity.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -29,5 +125,21 @@
       <updated>1682771732579</updated>
     </task>
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/shubhdms$Main.ic" NAME="Main Coverage Results" MODIFIED="1682772918434" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>Patient.entity.*</FILTER>
+    </SUITE>
   </component>
 </project>

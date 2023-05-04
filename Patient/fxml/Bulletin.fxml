@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="224.0" prefWidth="224.0" styleClass="#a925f5" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Patient.controller.BulletinController">
+   <children>
+      <VBox prefHeight="224.0" prefWidth="224.0" style="-fx-background-color: #88f05b#88f05b; -fx-border-color: #a925f5;">
+         <children>
+            <AnchorPane prefHeight="50.0" prefWidth="224.0" style="-fx-border-radius: 0.8;">
+               <children>
+                  <Label fx:id="bulletinTopic" alignment="TOP_LEFT" layoutX="3.0" layoutY="4.0" prefHeight="35.0" prefWidth="171.0" text="Topic ...">
+                     <font>
+                        <Font name="Artifakt Element Italic" size="13.0" />
+                     </font>
+                  </Label>
+                  <Button fx:id="viewCaption" layoutX="180.0" layoutY="9.0" mnemonicParsing="false" onAction="#onViewCaption" prefHeight="25.0" prefWidth="43.0" style="-fx-opacity: 0.5; -fx-background-color: #a925f5;" text="View" textFill="WHITE">
+                     <font>
+                        <Font name="Artifakt Element Italic" size="12.0" />
+                     </font>
+                  </Button>
+               </children>
+            </AnchorPane>
+            <ImageView fx:id="bulletinImage" fitHeight="123.0" fitWidth="224.0" pickOnBounds="true" preserveRatio="true" style="-fx-opacity: 0.9;" />
+            <Label fx:id="bulletinCaption" alignment="TOP_LEFT" prefHeight="67.0" prefWidth="224.0" style="-fx-background-color: #ffffff; -fx-opacity: 0.6;" text="Caption ...">
+               <font>
+                  <Font name="Artifakt Element Book Italic" size="11.0" />
+               </font>
+            </Label>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>
