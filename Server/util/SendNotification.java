@@ -1,7 +1,6 @@
 package Server.util;
 
-import com.example.dispensary_management_system.Server.main.Server;
-
+import Server.main.Server;
 import java.sql.Connection;
 import java.sql.SQLException;
 

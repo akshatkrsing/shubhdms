@@ -29,10 +29,10 @@ public class BulletinRequestHandler extends RequestHandler{
             while (resultSet.next()){
 
                 bulletinArrayList.add(
-                        new Bulletin(resultSet.getBlob(BulletinTable.IMAGE_BLOB),
-                                resultSet.getString(BulletinTable.BULLETIN_CAPTION),
-                                resultSet.getTimestamp(BulletinTable.BULLETIN_TIMESTAMP),
-                                resultSet.getString(BulletinTable.BULLETIN_TOPIC))
+                        new Bulletin(resultSet.getBlob(BulletinTable.COLUMN_IMAGE_BLOB),
+                                resultSet.getString(BulletinTable.COLUMN_BULLETIN_CAPTION),
+                                resultSet.getTimestamp(BulletinTable.COLUMN_BULLETIN_TIMESTAMP),
+                                resultSet.getString(BulletinTable.COLUMN_BULLETIN_TOPIC))
                 );
             }
             oos.writeObject(new BulletinResponse(bulletinArrayList));

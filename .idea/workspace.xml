@@ -2,63 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4ef21294-6626-4945-8da7-382307a79831" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Server/entity/Appointment.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Server/entity/Bulletin.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Server/entity/Doctor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Server/entity/DutyChartRow.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Server/entity/Message.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Server/entity/Notification.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Server/entity/RegistrationStreamWrapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Server/main/RequestIdentifier.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Server/main/Server.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Server/request/AppointmentListRequest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Server/request/BookAppointmentRequest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Server/request/BulletinRequest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Server/request/ChangePasswordRequest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Server/request/ChangeProfilePicRequest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Server/request/DutyChartRequest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Server/request/GetNotificationRequest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Server/request/GetProfilePicRequest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Server/request/LogOutRequest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Server/request/LoginRequest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Server/request/RegisterRequest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Server/request/Request.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Server/requestHandler/AppointmentListRequestHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Server/requestHandler/BookAppointmentRequestHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Server/requestHandler/BulletinRequestHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Server/requestHandler/ChangePasswordRequestHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Server/requestHandler/ChangeProfilePicRequestHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Server/requestHandler/DutyChartRequestHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Server/requestHandler/GetNotificationRequestHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Server/requestHandler/GetProfilePicRequestHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Server/requestHandler/LogOutRequestHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Server/requestHandler/LoginRequestHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Server/requestHandler/RegisterRequestHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Server/requestHandler/RequestHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Server/response/AppointmentListResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Server/response/BookAppointmentResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Server/response/BulletinResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Server/response/ChangePasswordResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Server/response/ChangeProfilePicResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Server/response/DutyChartResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Server/response/GetNotificationResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Server/response/GetProfilePicResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Server/response/LogOutResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Server/response/LoginResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Server/response/RegisterResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Server/response/Response.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Server/table/AppointmentTable.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Server/table/BookAppointmentTable.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Server/table/BulletinTable.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Server/table/DoctorTable.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Server/table/DutyChartTable.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Server/table/MessageTable.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Server/table/PatientTable.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Server/table/StudentTable.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Server/util/RandomString.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Server/util/SendNotification.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dbnavigator.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dbnavigator.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Patient/fxml/Register.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/requestHandler/AppointmentListRequestHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/Server/requestHandler/AppointmentListRequestHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/requestHandler/BulletinRequestHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/Server/requestHandler/BulletinRequestHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/table/AppointmentTable.java" beforeDir="false" afterPath="$PROJECT_DIR$/Server/table/AppointmentTable.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/table/BulletinTable.java" beforeDir="false" afterPath="$PROJECT_DIR$/Server/table/BulletinTable.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/util/SendNotification.java" beforeDir="false" afterPath="$PROJECT_DIR$/Server/util/SendNotification.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -84,18 +34,18 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "last_opened_file_path": "C:/Users/Akshat/IdeaProjects/shubhdms/Server",
-    "project.structure.last.edited": "SDKs",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.38965517",
-    "settings.editor.selected.configurable": "reference.projectsettings.compiler.javacompiler"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Akshat/IdeaProjects/shubhdms/Server&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;SDKs&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.38965517&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.projectsettings.compiler.javacompiler&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Akshat\IdeaProjects\shubhdms\Server" />
