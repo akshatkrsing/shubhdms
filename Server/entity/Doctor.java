@@ -27,7 +27,7 @@ public class Doctor implements Serializable {
         this.doctorType = doctorType;
     }
 
-    public void setDoctorID(int doctorID){this.doctorID = doctorID};
+    public void setDoctorID(int doctorID){this.doctorID = doctorID;};
     public void setName(String doctorName ) {
         this.doctorName  = doctorName ;
     }
