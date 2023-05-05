@@ -4,40 +4,52 @@ import javafx.scene.image.Image;
 import java.io.Serializable;
 
 public class Doctor implements Serializable {
-    private String name;
-    private String type;
-    private Image image;
+    private int doctorID;
+    private String doctorName;
+    private String doctorType;
+    private Image doctorImage;
 
 
-    public Doctor(String name, String type,Image image){
-        this.name = name;
-        this.type = name;
-        this.image = image;
+    public Doctor(String name, String type,Image doctorImage, int doctorID){
+        this.doctorName = name;
+        this.doctorType = name;
+        this.doctorImage= doctorImage;
+        this.doctorID=doctorID;
+    }
+    public Doctor(String name, String type,Image doctorImage){
+        this.doctorName = name;
+        this.doctorType = name;
+        this.doctorImage= doctorImage;
     }
 
-    public Doctor(String name, String type,int doctorId){
-        this.name = name;
-        this.type = name;
+    public Doctor(String doctorName , String doctorType){
+        this.doctorName  =doctorName ;
+        this.doctorType = doctorType;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setDoctorID(int doctorID){this.doctorID = doctorID};
+    public void setName(String doctorName ) {
+        this.doctorName  = doctorName ;
     }
-    public void setType(String type){
-        this.type = type;
-    }
-
-    public void setImage(Image image) {
-        this.image = image;
+    public void setType(String doctorType){
+        this.doctorType= doctorType;
     }
 
-    public String getName() {
-        return name;
+    public void setImage(Image doctorImage) {
+        this.doctorImage = doctorImage;
     }
-    public String getType() {
-        return type;
+
+    public String getDoctorName() {
+        return doctorName ;
     }
-    public Image getImage() {
-        return image;
+    public String getDoctorType() {
+        return doctorType;
+    }
+    public Image getDoctorImage() {
+        return doctorImage;
+    }
+
+    public int getDoctorID() {
+        return doctorID;
     }
 }

@@ -2,13 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4ef21294-6626-4945-8da7-382307a79831" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/dbnavigator.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dbnavigator.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database.sql" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Server/requestHandler/AppointmentListRequestHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/Server/requestHandler/AppointmentListRequestHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Server/requestHandler/BulletinRequestHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/Server/requestHandler/BulletinRequestHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/entity/Doctor.java" beforeDir="false" afterPath="$PROJECT_DIR$/Server/entity/Doctor.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Server/table/AppointmentTable.java" beforeDir="false" afterPath="$PROJECT_DIR$/Server/table/AppointmentTable.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Server/table/BulletinTable.java" beforeDir="false" afterPath="$PROJECT_DIR$/Server/table/BulletinTable.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Server/util/SendNotification.java" beforeDir="false" afterPath="$PROJECT_DIR$/Server/util/SendNotification.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

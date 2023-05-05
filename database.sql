@@ -1,0 +1,1 @@
+-- all the tables and corresponding fields
