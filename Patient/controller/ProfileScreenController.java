@@ -218,13 +218,13 @@ public class ProfileScreenController implements Initializable {
                 AppointmentCardLayoutController appointmentCardLayoutController = fxmlLoader.getController();
                 appointmentCardLayoutController.appointmentLabel.setText("Appointment : "+String.valueOf(i));
                 appointmentCardLayoutController.timeStampLabel.setText(appointment.getTimestamp().toString());
-                appointmentCardLayoutController.doctorNameLabel.setText(appointment.getDoctor().getName());
-                appointmentCardLayoutController.doctorTypeLabel.setText(appointment.getDoctor().getType());
+                appointmentCardLayoutController.doctorNameLabel.setText(appointment.getDoctor().getDoctorName());
+                appointmentCardLayoutController.doctorTypeLabel.setText(appointment.getDoctor().getDoctorType());
                 appointmentCardLayoutController.statusLabel.setText(appointment.getStatus());
                 appointmentCardLayoutController.fromTimeLabel.setText(appointment.getFromTime().toString());
                 appointmentCardLayoutController.toTimeLabel.setText(appointment.getToTime().toString());
                 appointmentCardLayoutController.memoLabel.setText(appointment.getMemo());
-                appointmentCardLayoutController.doctorImage.setImage(appointment.getDoctor().getImage());
+                appointmentCardLayoutController.doctorImage.setImage(appointment.getDoctor().getDoctorImage());
                 appointmentContainer.getChildren().add((javafx.scene.Node) node);
                 ++i;
 

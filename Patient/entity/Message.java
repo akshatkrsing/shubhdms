@@ -1,6 +1,6 @@
 package Patient.entity;
 
-import com.example.dispensary_management_system.Patient.request.Request;
+import Patient.request.Request;
 
 import javax.swing.*;
 import java.io.Serializable;
