@@ -3,9 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="4ef21294-6626-4945-8da7-382307a79831" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Patient/controller/ProfileScreenController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Patient/controller/ProfileScreenController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Patient/entity/Doctor.java" beforeDir="false" afterPath="$PROJECT_DIR$/Patient/entity/Doctor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Patient/entity/Message.java" beforeDir="false" afterPath="$PROJECT_DIR$/Patient/entity/Message.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
