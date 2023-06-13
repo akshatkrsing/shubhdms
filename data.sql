@@ -1,6 +1,6 @@
 -- primary data
 use dms;
-
+-- raw patient data
 INSERT INTO patient (registrationNo,firstName,lastName,emailID,password,profilePic) VALUES  ('20194039','Abhyudita','Singh','abhyudita.singh@mnnit.ac.in','5d41402abc4b2a76b9719d911017c592', NULL);
 INSERT INTO patient (registrationNo,firstName,lastName,emailID,password,profilePic) VALUES  ('20194084','Utkarsh','Rai','utkarsh.rai@mnnit.ac.in','5d41402abc4b2a76b9719d911017c592',NULL);
 INSERT INTO patient (registrationNo,firstName,lastName,emailID,password,profilePic) VALUES  ('20194116','Saurabh','Singh','saurabh.singh@mnnit.ac.in','5d41402abc4b2a76b9719d911017c592',NULL);
