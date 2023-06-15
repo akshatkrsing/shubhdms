@@ -3,6 +3,7 @@ package Server.main;
 import Server.entity.RegistrationStreamWrapper;
 import Server.request.*;
 import Server.requestHandler.*;
+import Staff.request.ManageAppointmentRequest;
 
 import java.io.IOException;
 import java.io.ObjectInputStream;
@@ -117,6 +118,10 @@ public class RequestIdentifier implements Runnable{
             else if(request instanceof DutyChartRequest){
                 DutyChartRequestHandler dutyChartRequestHandler =  new DutyChartRequestHandler(Server.getConnection(),oos);
                 dutyChartRequestHandler.sendResponse(userID);
+            }
+            else if(request instanceof ManageAppointmentRequest){
+                ManageAppointmentRequestHandler manageAppointmentRequestHandler = new ManageAppointmentRequestHandler(Server.getConnection(),oos,(ManageAppointmentRequest) request);
+                manageAppointmentRequestHandler.sendResponse(userID);
             }
 
         }

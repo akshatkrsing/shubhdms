@@ -1,7 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4ef21294-6626-4945-8da7-382307a79831" name="Changes" comment="" />
+    <list default="true" id="4ef21294-6626-4945-8da7-382307a79831" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Patient/controller/ProfileScreenController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Patient/controller/ProfileScreenController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/entity/Appointment.java" beforeDir="false" afterPath="$PROJECT_DIR$/Server/entity/Appointment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/main/RequestIdentifier.java" beforeDir="false" afterPath="$PROJECT_DIR$/Server/main/RequestIdentifier.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/table/AppointmentTable.java" beforeDir="false" afterPath="$PROJECT_DIR$/Server/table/AppointmentTable.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/table/BookAppointmentTable.java" beforeDir="false" afterPath="$PROJECT_DIR$/Server/table/BookAppointmentTable.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shubhdms.iml" beforeDir="false" afterPath="$PROJECT_DIR$/shubhdms.iml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -26,18 +35,18 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/Akshat/IdeaProjects/shubhdms/Server&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;SDKs&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.38965517&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;reference.projectsettings.compiler.javacompiler&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "last_opened_file_path": "C:/Users/shubhrata/Downloads/jar_files (1)",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.38965517",
+    "settings.editor.selected.configurable": "reference.projectsettings.compiler.javacompiler"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Akshat\IdeaProjects\shubhdms\Server" />

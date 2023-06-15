@@ -5,7 +5,7 @@
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
-      <module name="shubhdms" options="--add-exports java.desktop/sun.awt.image=ALL-UNNAMED" />
+      <module name="shubhdms" options="--add-exports java.desktop/sun.awt.image=ALL-UNNAMED --add-modules java.xml,java.desktop" />
     </option>
   </component>
 </project>
