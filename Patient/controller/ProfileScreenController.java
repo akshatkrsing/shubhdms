@@ -44,7 +44,7 @@ public class ProfileScreenController implements Initializable {
         setBulletin();
     }
 
-        private String name;
+       public String name;
         @FXML
         public Label heyNameLabel;
 

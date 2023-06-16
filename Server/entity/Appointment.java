@@ -16,7 +16,8 @@ public class Appointment implements Serializable {
     private Doctor doctor;
     private String memo;
     private Timestamp timestamp;
-    private String status = "Pending";
+    private int status = 0;
+
     private Timestamp fromTime;
     private Timestamp toTime;
 
@@ -37,7 +38,7 @@ public class Appointment implements Serializable {
         this.toTime = toTime;
     }
 
-    public void setStatus(String status) {
+    public void setStatus(int status) {
         this.status = status;
     }
 
@@ -53,7 +54,7 @@ public class Appointment implements Serializable {
         return timestamp;
     }
 
-    public String getStatus() {
+    public int getStatus() {
         return status;
     }
 

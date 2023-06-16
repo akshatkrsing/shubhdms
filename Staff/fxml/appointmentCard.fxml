@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.ButtonBar?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane prefHeight="48.0" prefWidth="654.0" style="-fx-background-color: #bce5ff;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Staff.controller.AppointmentCardController">
+   <children>
+      <HBox fx:id="manageapphbox" layoutX="-2.0" layoutY="2.0" prefHeight="38.0" prefWidth="651.0">
+         <children>
+            <Label fx:id="patientIDlabel" alignment="CENTER" prefHeight="38.0" prefWidth="82.0" style="-fx-background-color: white; -fx-border-color: grey;" textAlignment="JUSTIFY" />
+            <Label fx:id="patientNamelabel" alignment="CENTER" prefHeight="38.0" prefWidth="86.0" style="-fx-background-color: white; -fx-border-color: grey;" />
+            <DatePicker fx:id="date" prefHeight="39.0" prefWidth="71.0" />
+            <Label fx:id="startTimeLabel" alignment="CENTER" prefHeight="38.0" prefWidth="78.0" style="-fx-background-color: white; -fx-border-color: grey;" />
+            <Label fx:id="endTimelabel" alignment="CENTER" prefHeight="38.0" prefWidth="78.0" style="-fx-background-color: white; -fx-border-color: grey;" />
+            <HBox>
+               <children>
+                  <ButtonBar />
+               </children>
+            </HBox>
+            <BorderPane />
+            <ButtonBar />
+            <Label fx:id="memolable" alignment="CENTER" prefHeight="38.0" prefWidth="133.0" style="-fx-background-color: white; -fx-border-color: grey;" />
+            <HBox>
+               <children>
+                  <ScrollPane>
+                     <content>
+                        <SplitPane>
+                           <items>
+                              <VBox>
+                                 <children>
+                                    <AnchorPane>
+                                       <children>
+                                          <ComboBox fx:id="docDropDown" layoutY="3.0" prefHeight="26.0" prefWidth="117.0" promptText="Doctor" style="-fx-background-color: #aaeb1c;" />
+                                       </children>
+                                    </AnchorPane>
+                                 </children>
+                              </VBox>
+                           </items>
+                        </SplitPane>
+                     </content>
+                  </ScrollPane>
+               </children>
+            </HBox>
+         </children>
+      </HBox>
+   </children>
+</AnchorPane>
