@@ -49,7 +49,7 @@
     <retain-sticky-names value="false" />
   </component>
   <component name="DBNavigator.Project.FileConnectionMappingManager">
-    <mapping file-url="file://$PROJECT_DIR$/database.sql" connection-id="" session-id="" current-schema="" />
+    <mapping file-url="file://$PROJECT_DIR$/database.sql" connection-id="" session-id="MAIN" current-schema="" />
     <mapping file-url="file://$PROJECT_DIR$/data.sql" connection-id="c48ffb61-64a1-4d62-a14c-1c91d7298652" session-id="MAIN" current-schema="mysql" />
   </component>
   <component name="DBNavigator.Project.MethodExecutionManager">
