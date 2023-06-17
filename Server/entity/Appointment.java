@@ -9,17 +9,25 @@ import java.io.InputStream;
 import java.io.Serializable;
 import java.sql.Blob;
 import java.sql.SQLException;
+import java.sql.Time;
 import java.sql.Timestamp;
 
 public class Appointment implements Serializable {
 
-    private Doctor doctor;
+    private Doctor doctor = new Doctor("", "", null);
     private String memo;
     private Timestamp timestamp;
     private int status = 0;
 
     private String fromTime;
     private String toTime;
+
+    public Appointment(String memo, Timestamp timestamp, String fromTime, String toTime){
+        this.memo = memo;
+        this.timestamp = timestamp;
+        this.fromTime = fromTime;
+        this.toTime = toTime;
+    }
 
     public Appointment(String doctorName, String doctorType, String memo, Blob blob, Timestamp timestamp,String fromTime,String toTime) {
         this.doctor.setName(doctorName);

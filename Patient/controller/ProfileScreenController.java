@@ -43,8 +43,8 @@ public class ProfileScreenController implements Initializable {
     public void refreshButtonResponse() {
         System.out.println("Refreshed!");
 //        setDutyChart();
-        setProfilePic();
-        System.out.println("Profile pic processed!");
+//        setProfilePic();
+//        System.out.println("Profile pic processed!");
         setAppointmentsList();
 //        setBulletin();
     }
@@ -220,29 +220,32 @@ public class ProfileScreenController implements Initializable {
         assert appointmentListResponse != null;
         System.out.println("response is "+appointmentListResponse);
         ArrayList<Appointment> appointmentArrayList = appointmentListResponse.getAppointmentsList();
-        int i =1;
-        for(Appointment appointment : appointmentArrayList) {
-            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("../fxml/AppointmentCardFXML.fxml"));
-            try {
-                Node node = fxmlLoader.load();
-                AppointmentCardLayoutController appointmentCardLayoutController = fxmlLoader.getController();
-                appointmentCardLayoutController.appointmentLabel.setText("Appointment : "+String.valueOf(i));
-                appointmentCardLayoutController.timeStampLabel.setText(appointment.getTimestamp().toString());
-                appointmentCardLayoutController.doctorNameLabel.setText(appointment.getDoctor().getDoctorName());
-                appointmentCardLayoutController.doctorTypeLabel.setText(appointment.getDoctor().getDoctorType());
-                appointmentCardLayoutController.statusLabel.setText(String.valueOf(appointment.getStatus()));
-                appointmentCardLayoutController.fromTimeLabel.setText(appointment.getFromTime());
-                appointmentCardLayoutController.toTimeLabel.setText(appointment.getToTime());
-                appointmentCardLayoutController.memoLabel.setText(appointment.getMemo());
-                appointmentCardLayoutController.doctorImage.setImage(appointment.getDoctor().getDoctorImage());
-                appointmentContainer.getChildren().add((javafx.scene.Node) node);
-                ++i;
+        if(appointmentArrayList.isEmpty()) System.out.println("Appointment list is empty!");
+        else {
+            int i = 1;
+            for (Appointment appointment : appointmentArrayList) {
+                FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("../fxml/AppointmentCardFXML.fxml"));
+                Image image = new Image("Server/images/sample.png", true);
+                try {
+                    Node node = fxmlLoader.load();
+                    AppointmentCardLayoutController appointmentCardLayoutController = fxmlLoader.getController();
+                    appointmentCardLayoutController.appointmentLabel.setText("Appointment : " + String.valueOf(i));
+                    appointmentCardLayoutController.timeStampLabel.setText(appointment.getTimestamp().toString());
+                    appointmentCardLayoutController.doctorNameLabel.setText(appointment.getDoctor().getDoctorName());
+                    appointmentCardLayoutController.doctorTypeLabel.setText(appointment.getDoctor().getDoctorType());
+                    appointmentCardLayoutController.statusLabel.setText(String.valueOf(appointment.getStatus()));
+                    appointmentCardLayoutController.fromTimeLabel.setText(appointment.getFromTime());
+                    appointmentCardLayoutController.toTimeLabel.setText(appointment.getToTime());
+                    appointmentCardLayoutController.memoLabel.setText(appointment.getMemo());
+                    appointmentCardLayoutController.doctorImage.setImage(appointment.getDoctor().getDoctorImage()!=null?appointment.getDoctor().getDoctorImage():image);
+                    appointmentContainer.getChildren().add(node);
+                    ++i;
 
-            } catch (IOException e) {
-                e.printStackTrace();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
             }
         }
-
     }
 
     @FXML

@@ -12,13 +12,13 @@ public class Doctor implements Serializable {
 
     public Doctor(String name, String type,Image doctorImage, int doctorID){
         this.doctorName = name;
-        this.doctorType = name;
+        this.doctorType = type;
         this.doctorImage= doctorImage;
         this.doctorID=doctorID;
     }
     public Doctor(String name, String type,Image doctorImage){
         this.doctorName = name;
-        this.doctorType = name;
+        this.doctorType = type;
         this.doctorImage= doctorImage;
     }
 

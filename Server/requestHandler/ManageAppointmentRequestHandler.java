@@ -1,16 +1,9 @@
 package Server.requestHandler;
 
-import Server.request.BookAppointmentRequest;
-import Server.response.BookAppointmentResponse;
-import Server.table.AppointmentTable;
-import Server.table.BookAppointmentTable;
 import Server.request.ManageAppointmentRequest;
 
-import java.io.IOException;
 import java.io.ObjectOutputStream;
 import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.SQLException;
 
 public class ManageAppointmentRequestHandler extends RequestHandler{
     private ObjectOutputStream oos;
