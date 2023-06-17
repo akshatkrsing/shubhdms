@@ -4,6 +4,7 @@ package Server.requestHandler;
 import Server.entity.Appointment;
 import Server.response.AppointmentListResponse;
 import Server.table.AppointmentTable;
+import Server.table.DoctorTable;
 
 import java.io.IOException;
 import java.io.ObjectOutputStream;
@@ -32,13 +33,13 @@ public class AppointmentListRequestHandler extends RequestHandler{
             while (resultSet.next()){
                 appointmentArrayList.add(
                         new Appointment(
-                                resultSet.getString(AppointmentTable.COLUMN_DOC_NAME),
-                                resultSet.getString(AppointmentTable.COLUMN_DOC_TYPE),
+                                resultSet.getString(DoctorTable.COLUMN_DOC_NAME),
+                                resultSet.getString(DoctorTable.COLUMN_DOC_TYPE),
                                 resultSet.getString(AppointmentTable.COLUMN_APPOINTMENT_MEMO),
-                                resultSet.getBlob(AppointmentTable.COLUMN_IMAGE_BLOB),
+                                resultSet.getBlob(DoctorTable.COLUMN_IMAGE_BLOB),
                                 resultSet.getTimestamp(AppointmentTable.COLUMN_APPOINTMENT_TIMESTAMP),
-                                resultSet.getTimestamp(AppointmentTable.COLUMN_APPOINTMENT_FROM_TIME),
-                                resultSet.getTimestamp(AppointmentTable.COLUMN_APPOINTMENT_TO_TIME)
+                                resultSet.getString(AppointmentTable.COLUMN_APPOINTMENT_FROM_TIME),
+                                resultSet.getString(AppointmentTable.COLUMN_APPOINTMENT_TO_TIME)
                         )
                 );
             }

@@ -1,4 +1,4 @@
-package Server.request;
+package Staff.request;
 
 import Staff.request.Request;
 import Staff.response.ManageAppointmentResponse;

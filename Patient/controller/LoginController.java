@@ -2,7 +2,7 @@ package Patient.controller;
 
 import Patient.entity.Main;
 import Patient.request.LoginRequest;
-import Patient.response.LoginResponse;
+import Server.response.LoginResponse;
 import Patient.util.GuiUtil;
 import Patient.util.HashUtil;
 import javafx.event.ActionEvent;
@@ -50,10 +50,13 @@ public class LoginController implements Initializable{
             Stage currentStage=(Stage)loginButton.getScene().getWindow();
             Scene scene=null;
             try {
-                scene=new Scene(homepageLoader.load(), loginButton.getScene().getWidth(), loginButton.getScene().getHeight());
+                scene=new Scene(homepageLoader.load(), 682, 580.6667);
             } catch (IOException e) {
                 e.printStackTrace();
             }
+            currentStage.setScene(scene);
+            currentStage.setResizable(false);
+            currentStage.setTitle("Welcome");
             currentStage.setOnCloseRequest(event -> {
                 try {
                     Main.oos.close();

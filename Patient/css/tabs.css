@@ -1,8 +1,13 @@
 .tab *.tab-label {
     -fx-rotate: 90;
+    -fx-pref-width: 65;
+    -fx-font-size:10px;
 }
 
 .tab {
-    -fx-padding: 3em 0.5em 3em 0.5em;
+    -fx-padding: 2em 0.2em 2em 0.2em;
 
+}
+#bookAppointmentButton{
+    -fx-rotate: -90;
 }

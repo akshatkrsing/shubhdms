@@ -1,6 +1,6 @@
 package Server.entity;
 
-import com.example.dispensary_management_system.Server.request.Request;
+import Server.request.Request;
 
 import javax.swing.*;
 import java.io.Serializable;

@@ -1,7 +1,5 @@
 package Staff.response;
 
-import com.example.dispensary_management_system.Patient.response.Response;
-
 public class RegisterResponse extends Response {
     private String message;
 

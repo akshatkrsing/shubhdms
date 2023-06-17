@@ -24,12 +24,12 @@ public class Server {
     public static void main(String[] args) {
         //Declaring sockets
         ServerSocket serverSocket= null;
-        ServerSocket chatServerSocket=null;
+//        ServerSocket chatServerSocket=null;
         Socket socket;
         try {
             // Creating Server Sockets, one for client requests and Chat.
             serverSocket=new ServerSocket(6969);
-            chatServerSocket=new ServerSocket(6970);
+//            chatServerSocket=new ServerSocket(6970);
             System.out.println("Server Socket Created!");
         } catch (IOException e) {
             e.printStackTrace();
@@ -42,7 +42,9 @@ public class Server {
                 socket=serverSocket.accept();
                 System.out.println("Server Socket Connected!");
                 //Starting a thread that listens for client requests and creates a chat socket connection.
-                Thread thread=new Thread(new RequestIdentifier(socket, chatServerSocket));
+                Thread thread=new Thread(new RequestIdentifier(socket
+//                        , chatServerSocket
+                ));
                 thread.start();
 
                 //Starting a thread that sends notifications to client dynamically
@@ -63,6 +65,7 @@ public class Server {
      * @return SQL Connection
      */
     public static Connection getConnection() {
+        System.out.println("Connecting to database....");
         if(connection!=null)return connection;
         try{
             Class.forName("com.mysql.cj.jdbc.Driver");
@@ -98,6 +101,7 @@ public class Server {
      * @return returns an Object
      */
     public static Object receiveRequest(ObjectInputStream inputStream) throws IOException, ClassNotFoundException {
+        System.out.println("Request Received!");
         return inputStream.readObject();
     }
 

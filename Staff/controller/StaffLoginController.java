@@ -12,13 +12,6 @@ import javafx.event.ActionEvent;
         import javafx.scene.Scene;
         import javafx.scene.control.*;
         import javafx.stage.Stage;
-        import com.example.dispensary_management_system.staff.util.ChatUtil;
-        import com.example.dispensary_management_system.staff.util.GuiUtil;
-        import com.example.dispensary_management_system.staff.main.StaffMain;
-        import com.example.dispensary_management_system.staff.request.StaffLoginRequest;
-        import com.example.dispensary_management_system.staff.response.StaffLoginResponse;
-        import com.example.dispensary_management_system.staff.util.HashUtil;;
-
         import java.io.IOException;
         import java.io.InputStream;
         import java.io.ObjectInputStream;
@@ -46,24 +39,24 @@ public class StaffLoginController implements Initializable {
         if(response==null)
             GuiUtil.alert(Alert.AlertType.ERROR,"Incorrect Information.Please try again.");
         else {
-            Main.setTeacherId(response.getTeacherID());
-            Main.setTeacherName(response.getFirstName() + " " + response.getLastName());
-            startMessageThread();
-            FXMLLoader homepageLoader= new FXMLLoader(getClass().getResource("../views/TeacherHomeView.fxml"));
-            Stage currentStage=(Stage)loginButton.getScene().getWindow();
-
-            Scene scene=null;
-            try {
-                scene=new Scene(homepageLoader.load());
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-            currentStage.setScene(scene);
-            currentStage.setMaximized(true);
-            currentStage.setResizable(false);
-            currentStage.setTitle("Welcome");
-            TeacherHomeController controller = homepageLoader.getController();
-            controller.callFirst();
+//            Main.setTeacherId(response.getTeacherID());
+//            Main.setTeacherName(response.getFirstName() + " " + response.getLastName());
+//            startMessageThread();
+//            FXMLLoader homepageLoader= new FXMLLoader(getClass().getResource("../views/TeacherHomeView.fxml"));
+//            Stage currentStage=(Stage)loginButton.getScene().getWindow();
+//
+//            Scene scene=null;
+//            try {
+//                scene=new Scene(homepageLoader.load());
+//            } catch (IOException e) {
+//                e.printStackTrace();
+//            }
+//            currentStage.setScene(scene);
+//            currentStage.setMaximized(true);
+//            currentStage.setResizable(false);
+//            currentStage.setTitle("Welcome");
+//            StaffHomeController controller = homepageLoader.getController();
+//            controller.callFirst();
         }
     }
 
@@ -81,8 +74,8 @@ public class StaffLoginController implements Initializable {
             e.printStackTrace();
         }
 
-        Thread t=new Thread(new ChatUtil(chatois));
-        t.start();
+//        Thread t=new Thread(new ChatUtil(chatois));
+//        t.start();
     }
 
     public void switchToSignup(ActionEvent actionEvent) {
@@ -94,7 +87,7 @@ public class StaffLoginController implements Initializable {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        TeacherRegisterController teacherRegisterController=registerLoader.getController();
+        StaffRegisterController teacherRegisterController=registerLoader.getController();
         teacherRegisterController.first();
         stage.setScene(scene);
         stage.setTitle("Sign Up");

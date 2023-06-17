@@ -1,6 +1,6 @@
 package Server.requestHandler;
 
-import Server.request.ChangeProfilePicRequest;
+import Patient.request.ChangeProfilePicRequest;
 import Server.response.ChangeProfilePicResponse;
 import Server.table.PatientTable;
 

@@ -8,7 +8,7 @@ use dms;
  create table if not exists bulletins(bulletinID int primary key auto_increment,caption varchar(150), topic
  varchar(20), bulletinTime timestamp, teacherID int,image longblob);
  -- appointments table
- create table if not exists appointmens(appointmentID int primary key auto_increment, registrationNo int,doctorID int, memo varchar(150),
+ create table if not exists appointments(appointmentID int primary key auto_increment, registrationNo int,doctorID int, memo varchar(150),
  appointmentStatus tinyint,confirmationTime time, appointmentDate date,fromTime time, toTime time,foreign key(registrationNo)
  references patient(registrationNo) on delete cascade,foreign key(doctorID) references doctor(doctorID) on delete set null);
  -- doctor table

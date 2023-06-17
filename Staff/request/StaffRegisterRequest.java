@@ -1,7 +1,5 @@
 package Staff.request;
 
-import com.example.dispensary_management_system.Patient.request.Request;
-
 public class StaffRegisterRequest extends Request {
     private String firstName,lastName,emailID,password,username;
 

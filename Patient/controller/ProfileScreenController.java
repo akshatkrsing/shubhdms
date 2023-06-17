@@ -1,15 +1,19 @@
 package Patient.controller;
 
-import Patient.entity.*;
+import Patient.entity.Main;
 import Patient.request.*;
-import Patient.response.*;
+import Server.entity.Appointment;
+import Server.entity.Bulletin;
+import Server.entity.DutyChartRow;
+import Server.entity.Notification;
+import Server.response.*;
 import Patient.util.HashUtil;
-import com.sun.net.httpserver.Request;
 import javafx.embed.swing.SwingFXUtils;
 import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.image.Image;
@@ -18,7 +22,6 @@ import javafx.scene.layout.FlowPane;
 import javafx.scene.layout.VBox;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
-import org.w3c.dom.Node;
 import sun.awt.image.ToolkitImage;
 
 import javax.swing.*;
@@ -38,10 +41,12 @@ public class ProfileScreenController implements Initializable {
 
     }
     public void refreshButtonResponse() {
-        setDutyChart();
-        setAppointmentsList();
+        System.out.println("Refreshed!");
+//        setDutyChart();
         setProfilePic();
-        setBulletin();
+        System.out.println("Profile pic processed!");
+        setAppointmentsList();
+//        setBulletin();
     }
 
        public String name;
@@ -53,7 +58,7 @@ public class ProfileScreenController implements Initializable {
             this.name=name;
             heyNameLabel.setText("Hey, "+name);
             System.out.println("inside the first method after login trying to create chat socket");
-
+            refreshButtonResponse();
     }
         @FXML
         public VBox notificationContainer;
@@ -75,7 +80,7 @@ public class ProfileScreenController implements Initializable {
                 singleNotificationCardFXMLController.courseLabel.setText(notification.getCourseName());
                 singleNotificationCardFXMLController.messageLabel.setText(notification.getText());
                 singleNotificationCardFXMLController.timestampLabel.setText(notification.getSentAt().toString());
-                notificationContainer.getChildren().add((javafx.scene.Node) node);
+                notificationContainer.getChildren().add(node);
             } catch (IOException e) {
                 e.printStackTrace();
             }
@@ -89,15 +94,20 @@ public class ProfileScreenController implements Initializable {
 
     private void setProfilePic() {
         GetProfilePicRequest getProfilePicRequest = new GetProfilePicRequest();
-        Main.sendRequest((Request) getProfilePicRequest);
+        System.out.println("Profile pic request sent!");
+        Main.sendRequest(getProfilePicRequest);
         GetProfilePicResponse getProfilePicResponse = (GetProfilePicResponse) Main.getResponse();
         System.out.println("Image input stream received "+getProfilePicResponse);
         BufferedImage bufferedImage;
         Image image;
         if(getProfilePicResponse != null) {
 
+            System.out.println("java.swing.ImageIcon to javafx.scene.image.Image");
             bufferedImage=  ((ToolkitImage)getProfilePicResponse. getImageIcon().getImage()).getBufferedImage();
+//            bufferedImage  = getProfilePicResponse.getBufferedImage();
             image = SwingFXUtils.toFXImage(bufferedImage, null);
+//            ImageIcon swingImageIcon = getProfilePicResponse. getImageIcon();
+//            image = new javafx.scene.image.Image(swingImageIcon.getDescription());
             profilePicImageView.setImage(image);
             changeProfilePicImageView.setImage(image);
         }
@@ -200,10 +210,10 @@ public class ProfileScreenController implements Initializable {
     }
 
     @FXML
-    private VBox appointmentContainer;
+    private VBox appointmentContainer ;
     public void setAppointmentsList(){
         appointmentContainer.getChildren().clear();
-        Main.sendRequest((Request) new AppointmentListRequest());
+        Main.sendRequest(new AppointmentListRequest());
         System.out.println("requesting appointment list");
         AppointmentListResponse appointmentListResponse = (AppointmentListResponse) Main.getResponse();
         System.out.println("got appointment list response");
@@ -220,9 +230,9 @@ public class ProfileScreenController implements Initializable {
                 appointmentCardLayoutController.timeStampLabel.setText(appointment.getTimestamp().toString());
                 appointmentCardLayoutController.doctorNameLabel.setText(appointment.getDoctor().getDoctorName());
                 appointmentCardLayoutController.doctorTypeLabel.setText(appointment.getDoctor().getDoctorType());
-                appointmentCardLayoutController.statusLabel.setText(appointment.getStatus());
-                appointmentCardLayoutController.fromTimeLabel.setText(appointment.getFromTime().toString());
-                appointmentCardLayoutController.toTimeLabel.setText(appointment.getToTime().toString());
+                appointmentCardLayoutController.statusLabel.setText(String.valueOf(appointment.getStatus()));
+                appointmentCardLayoutController.fromTimeLabel.setText(appointment.getFromTime());
+                appointmentCardLayoutController.toTimeLabel.setText(appointment.getToTime());
                 appointmentCardLayoutController.memoLabel.setText(appointment.getMemo());
                 appointmentCardLayoutController.doctorImage.setImage(appointment.getDoctor().getDoctorImage());
                 appointmentContainer.getChildren().add((javafx.scene.Node) node);
@@ -265,12 +275,14 @@ public class ProfileScreenController implements Initializable {
         }
         else {
             BookAppointmentRequest bookAppointmentRequest =  new BookAppointmentRequest(appointmentDatePicker.getValue(),appointmentFromTime.getText(),appointmentToTime.getText(),appointmentMemo.getText());
-            Main.sendRequest((Request) bookAppointmentRequest);
+            Main.sendRequest(bookAppointmentRequest);
+            System.out.println("Booking appointment request sent !");
             BookAppointmentResponse bookAppointmentResponse = (BookAppointmentResponse) Main.getResponse();
             assert bookAppointmentResponse != null;
             System.out.println("Booking response received");
             if(bookAppointmentResponse.getResponse().equals("Successful")) {
                 System.out.println("Booking "+bookAppointmentResponse.getResponse());
+                JOptionPane.showMessageDialog(null,"Booking requested successfully!");
             }
             else {
                 JOptionPane.showMessageDialog(null,"Booking failed. Try again!");

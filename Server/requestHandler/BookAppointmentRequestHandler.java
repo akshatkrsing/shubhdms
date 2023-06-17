@@ -2,9 +2,9 @@ package Server.requestHandler;
 
 
 
-import Server.request.BookAppointmentRequest;
+import Patient.request.BookAppointmentRequest;
 import Server.response.BookAppointmentResponse;
-import Server.table.BookAppointmentTable;
+import Server.table.AppointmentTable;
 
 
 import java.io.IOException;
@@ -28,11 +28,12 @@ public class BookAppointmentRequestHandler extends RequestHandler{
     public void sendResponse(String userID) {
         int result = 0;
         try {
-            PreparedStatement preparedStatement=connection.prepareStatement(BookAppointmentTable.QUERY_INSERT_APPOINTMENT);
+            PreparedStatement preparedStatement=connection.prepareStatement(AppointmentTable.QUERY_INSERT_APPOINTMENT);
             preparedStatement.setInt(1,Integer.parseInt(userID));
             preparedStatement.setString(2,bookAppointmentRequest.getFromTime());
             preparedStatement.setString(3, bookAppointmentRequest.getToTime());
             preparedStatement.setString(4,bookAppointmentRequest.getMemo());
+            preparedStatement.setInt(5, 0);
             result=preparedStatement.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();
