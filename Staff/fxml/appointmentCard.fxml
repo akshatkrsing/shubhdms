@@ -1,55 +1,61 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.ButtonBar?>
+<?import javafx.scene.control.Accordion?>
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.ScrollPane?>
-<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TitledPane?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.BorderPane?>
-<?import javafx.scene.layout.HBox?>
-<?import javafx.scene.layout.VBox?>
 
-<AnchorPane prefHeight="48.0" prefWidth="654.0" style="-fx-background-color: #bce5ff;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Staff.controller.AppointmentCardController">
+<AnchorPane fx:id="ManageAppointmentAnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="174.0" prefWidth="353.0" style="-fx-border-color: black; -fx-border-width: 1;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <HBox fx:id="manageapphbox" layoutX="-2.0" layoutY="2.0" prefHeight="38.0" prefWidth="651.0">
-         <children>
-            <Label fx:id="patientIDlabel" alignment="CENTER" prefHeight="38.0" prefWidth="82.0" style="-fx-background-color: white; -fx-border-color: grey;" textAlignment="JUSTIFY" />
-            <Label fx:id="patientNamelabel" alignment="CENTER" prefHeight="38.0" prefWidth="86.0" style="-fx-background-color: white; -fx-border-color: grey;" />
-            <DatePicker fx:id="date" prefHeight="39.0" prefWidth="71.0" />
-            <Label fx:id="startTimeLabel" alignment="CENTER" prefHeight="38.0" prefWidth="78.0" style="-fx-background-color: white; -fx-border-color: grey;" />
-            <Label fx:id="endTimelabel" alignment="CENTER" prefHeight="38.0" prefWidth="78.0" style="-fx-background-color: white; -fx-border-color: grey;" />
-            <HBox>
-               <children>
-                  <ButtonBar />
-               </children>
-            </HBox>
-            <BorderPane />
-            <ButtonBar />
-            <Label fx:id="memolable" alignment="CENTER" prefHeight="38.0" prefWidth="133.0" style="-fx-background-color: white; -fx-border-color: grey;" />
-            <HBox>
-               <children>
-                  <ScrollPane>
-                     <content>
-                        <SplitPane>
-                           <items>
-                              <VBox>
-                                 <children>
-                                    <AnchorPane>
-                                       <children>
-                                          <ComboBox fx:id="docDropDown" layoutY="3.0" prefHeight="26.0" prefWidth="117.0" promptText="Doctor" style="-fx-background-color: #aaeb1c;" />
-                                       </children>
-                                    </AnchorPane>
-                                 </children>
-                              </VBox>
-                           </items>
-                        </SplitPane>
-                     </content>
-                  </ScrollPane>
-               </children>
-            </HBox>
-         </children>
-      </HBox>
+      <Label fx:id="patentNamelb" layoutX="102.0" layoutY="26.0" text="Name: " />
+      <Label fx:id="sTimeLb" layoutX="97.0" layoutY="56.0" prefHeight="18.0" prefWidth="60.0" text="Start Time:" />
+      <Label fx:id="dateLb" layoutX="19.0" layoutY="56.0" text="Date: " />
+      <Label fx:id="patientIDLb" layoutX="19.0" layoutY="26.0" text="ID:" />
+      <Label fx:id="eTimeLb" layoutX="16.0" layoutY="82.0" text="End Time:" />
+      <Label fx:id="memolable" alignment="TOP_LEFT" layoutX="7.0" layoutY="112.0" prefHeight="51.0" prefWidth="190.0" style="-fx-border-color: blue;" />
+      <Accordion layoutX="204.0" layoutY="12.0" prefHeight="150.0" prefWidth="142.0">
+         <panes>
+            <TitledPane fx:id="selectTimeTiTlePane" animated="false" prefHeight="109.0" prefWidth="161.0" text="select time">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="75.0" prefWidth="191.0">
+                     <children>
+                        <Label fx:id="sTimeAccLb" layoutX="14.0" layoutY="14.0" prefHeight="18.0" prefWidth="65.0" text="start time" />
+                        <Label fx:id="eTimeAccLb" layoutX="14.0" layoutY="45.0" text="end time" />
+                        <TextField layoutX="78.0" layoutY="10.0" prefHeight="26.0" prefWidth="62.0" />
+                        <TextField layoutX="78.0" layoutY="41.0" prefHeight="26.0" prefWidth="61.0" />
+                     </children>
+                  </AnchorPane>
+               </content>
+            </TitledPane>
+            <TitledPane fx:id="chooseDocTitlePane" animated="false" prefHeight="65.0" prefWidth="193.0" text="choose doctor">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <ComboBox fx:id="docDropDown" layoutX="18.0" layoutY="13.0" prefHeight="26.0" prefWidth="107.0" />
+                     </children>
+                  </AnchorPane>
+               </content>
+            </TitledPane>
+            <TitledPane fx:id="selectDateTitlePane" animated="false" prefHeight="72.0" prefWidth="202.0" text="select date">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="278.0">
+                     <children>
+                        <DatePicker fx:id="date" layoutX="18.0" layoutY="9.0" prefHeight="26.0" prefWidth="115.0" />
+                     </children>
+                  </AnchorPane>
+               </content>
+            </TitledPane>
+         </panes>
+      </Accordion>
+      <Label fx:id="patientIDlabel" layoutX="42.0" layoutY="25.0" prefHeight="18.0" prefWidth="45.0" />
+      <Label fx:id="prefferedDatelb" layoutX="50.0" layoutY="55.0" prefHeight="18.0" prefWidth="38.0" />
+      <Label fx:id="patientNamelabel" layoutX="140.0" layoutY="26.0" prefHeight="18.0" prefWidth="45.0" />
+      <Label fx:id="startTimeLabel" layoutX="154.0" layoutY="55.0" prefHeight="18.0" prefWidth="46.0" />
+      <Label fx:id="endTimelabel" layoutX="73.0" layoutY="82.0" prefHeight="18.0" prefWidth="52.0" />
+      <Button fx:id="viewMemoButton" layoutX="143.0" layoutY="133.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="52.0" text="View" />
    </children>
 </AnchorPane>

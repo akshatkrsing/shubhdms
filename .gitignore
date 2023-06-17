@@ -4,3 +4,8 @@ out/
 shubhdms.iml
 !**/src/main/**/out/
 !**/src/test/**/out/
+<<<<<<< HEAD
+.idea/
+shubhdms.iml
+=======
+>>>>>>> 611dc9575040930b3e6f9f966db76115504f3f96
