@@ -52,7 +52,7 @@ public class StaffMain extends Application {
             });
 //            primaryStage.setAlwaysOnTop(true);
 //            primaryStage.setMaximized(true);
-//            primaryStage.resizableProperty().setValue(Boolean.FALSE);
+            primaryStage.setResizable(false);
             primaryStage.show();
             connectToServer();
         } catch (IOException e) {
