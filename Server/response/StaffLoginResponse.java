@@ -1,4 +1,6 @@
-package Staff.response;
+package Server.response;
+
+
 
 public class StaffLoginResponse extends Response {
     private final String firstName,lastName,emailID;

@@ -1,10 +1,12 @@
 package Server.main;
 
-import Server.entity.Patient;
-import Server.entity.RegistrationStreamWrapper;
+
 import Patient.request.*;
+import Staff.request.StaffLoginRequest;
+import Staff.request.StaffRegisterRequest;
 import Server.requestHandler.*;
 import Staff.request.ManageAppointmentRequest;
+
 
 import java.io.IOException;
 import java.io.ObjectInputStream;
@@ -18,6 +20,7 @@ public class RequestIdentifier implements Runnable{
     ObjectInputStream ois=null;
 //    ServerSocket chatServerSocket;
     public String userID;
+    public String staffID;
 
     /**
      * Constructor that takes multiple socket parameters and initialises the I/O streams accordingly
@@ -93,7 +96,18 @@ public class RequestIdentifier implements Runnable{
                 System.out.println("Registration request being handled!");
                 RegisterRequestHandler registerRequestHandler = new RegisterRequestHandler((RegisterRequest) request, oos, Server.getConnection());
                 registerRequestHandler.sendResponse(userID);
-            }else if(request instanceof GetNotificationRequest){
+            }else if (request instanceof StaffLoginRequest) {
+                //When login request arrives we create an instance of the LoginRequestHandler,
+                // pass the required parameters and call the sendResponse method.
+                staffID = ((StaffLoginRequest) request).getUsername();
+                StaffLoginRequestHandler staffLoginRequestHandler = new StaffLoginRequestHandler(oos, (StaffLoginRequest) request, Server.getConnection());
+                staffLoginRequestHandler.sendResponse(staffID);
+            } else if (request instanceof StaffRegisterRequest) {
+                System.out.println("Registration request being handled!");
+                StaffRegisterRequestHandler staffRegisterRequestHandler = new StaffRegisterRequestHandler((StaffRegisterRequest) request, oos, Server.getConnection());
+                staffRegisterRequestHandler.sendResponse(userID);
+
+            } else if(request instanceof GetNotificationRequest){
                 GetNotificationRequestHandler getNotificationRequestHandler=new GetNotificationRequestHandler(Server.getConnection(), oos);
                 getNotificationRequestHandler.sendResponse(userID);
             }

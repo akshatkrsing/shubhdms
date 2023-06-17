@@ -5,20 +5,17 @@ package Staff.controller;
 //import Patient.request.AppointmentListRequest;
 //import Patient.response.AppointmentListResponse;
 //import Server.request.ManageAppointmentRequest;
-import Staff.response.ManageAppointmentResponse;
+import Patient.entity.Main;
+import Staff.main.StaffMain;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.scene.control.*;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.VBox;
-import org.w3c.dom.Node;
 
 import javax.swing.*;
-import java.io.IOException;
-import java.util.ArrayList;
 
-public class ProfileScreenController {
+public class StaffProfileScreenController {
 
     @FXML
     private Button changePasswordButton;
@@ -85,6 +82,7 @@ public class ProfileScreenController {
 
     @FXML
     private Button selectImageButton;
+    private String name;
 
 
     @FXML
@@ -182,7 +180,22 @@ public class ProfileScreenController {
 
 //        }
     }
+    public void refreshButtonResponse() {
+        System.out.println("Refreshed!");
+//        setDutyChart();
+//        setProfilePic();
+//        System.out.println("Profile pic processed!");
+        setAppointmentsList();
+//        setBulletin();
+    }
 
+    public void first(String name) {
+        StaffMain.staffprofileScreenController = this;
+        this.name=name;
+        heyNameLabel.setText("Hey, "+name);
+        System.out.println("inside the first method after login trying to create chat socket");
+        refreshButtonResponse();
+    }
 }
 
 

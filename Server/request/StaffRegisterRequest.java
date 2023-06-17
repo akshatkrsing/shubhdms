@@ -1,6 +1,4 @@
-package Staff.request;
-
-import Server.request.Request;;
+package Server.request;
 
 public class StaffRegisterRequest extends Request {
     private String firstName,lastName,emailID,password,username;

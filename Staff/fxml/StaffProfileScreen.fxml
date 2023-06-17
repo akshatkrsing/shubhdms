@@ -15,7 +15,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Staff.controller.ProfileScreenController">
+<BorderPane xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Staff.controller.StaffProfileScreenController">
     <top>
         <HBox alignment="TOP_CENTER" nodeOrientation="LEFT_TO_RIGHT" prefHeight="0.0" prefWidth="682.0">
             <children>
