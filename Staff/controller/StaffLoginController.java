@@ -46,8 +46,8 @@ public class StaffLoginController implements Initializable {
         if(response==null)
             GuiUtil.alert(Alert.AlertType.ERROR,"Incorrect Information.Please try again.");
         else {
-            Main.setTeacherId(response.getTeacherID());
-            Main.setTeacherName(response.getFirstName() + " " + response.getLastName());
+            Practice.setTeacherId(response.getTeacherID());
+            Practice.setTeacherName(response.getFirstName() + " " + response.getLastName());
             startMessageThread();
             FXMLLoader homepageLoader= new FXMLLoader(getClass().getResource("../views/TeacherHomeView.fxml"));
             Stage currentStage=(Stage)loginButton.getScene().getWindow();
