@@ -1,5 +1,6 @@
 package Patient.entity;
 
+import Server.entity.Doctor;
 import javafx.embed.swing.SwingFXUtils;
 
 import javax.imageio.ImageIO;
@@ -13,14 +14,15 @@ import java.sql.Timestamp;
 
 public class Appointment implements Serializable {
 
-    private Doctor doctor;
+    private Server.entity.Doctor doctor;
     private String memo;
     private Timestamp timestamp;
-    private String status = "Pending";
-    private Timestamp fromTime;
-    private Timestamp toTime;
+    private int status = 0;
 
-    public Appointment(String doctorName, String doctorType, String memo, Blob blob, Timestamp timestamp,Timestamp fromTime,Timestamp toTime) {
+    private String fromTime;
+    private String toTime;
+
+    public Appointment(String doctorName, String doctorType, String memo, Blob blob, Timestamp timestamp,String fromTime,String toTime) {
         this.doctor.setName(doctorName);
         this.doctor.setType(doctorType);
         try {
@@ -37,7 +39,7 @@ public class Appointment implements Serializable {
         this.toTime = toTime;
     }
 
-    public void setStatus(String status) {
+    public void setStatus(int status) {
         this.status = status;
     }
 
@@ -53,23 +55,23 @@ public class Appointment implements Serializable {
         return timestamp;
     }
 
-    public String getStatus() {
+    public int getStatus() {
         return status;
     }
 
-    public void setFromTime(Timestamp fromTime) {
+    public void setFromTime(String fromTime) {
         this.fromTime = fromTime;
     }
 
-    public void setToTime(Timestamp toTime) {
+    public void setToTime(String toTime) {
         this.toTime = toTime;
     }
 
-    public Timestamp getFromTime() {
+    public String getFromTime() {
         return fromTime;
     }
 
-    public Timestamp getToTime() {
+    public String getToTime() {
         return toTime;
     }
 }

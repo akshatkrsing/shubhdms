@@ -1,8 +1,5 @@
 package Staff.response;
 
-
-import com.example.dispensary_management_system.Patient.response.Response;
-
 public class StaffLoginResponse extends Response {
     private final String firstName,lastName,emailID;
     private final int registrationNo;

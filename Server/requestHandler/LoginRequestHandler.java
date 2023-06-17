@@ -1,6 +1,6 @@
 package Server.requestHandler;
 
-import Server.request.LoginRequest;
+import Patient.request.LoginRequest;
 import Server.response.LoginResponse;
 import Server.table.PatientTable;
 

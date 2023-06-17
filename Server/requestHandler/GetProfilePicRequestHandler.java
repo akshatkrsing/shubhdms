@@ -1,6 +1,6 @@
 package Server.requestHandler;
 
-import Server.request.GetProfilePicRequest;
+import Patient.request.GetProfilePicRequest;
 import Server.response.GetProfilePicResponse;
 import Server.table.PatientTable;
 
@@ -36,6 +36,7 @@ public class GetProfilePicRequestHandler extends RequestHandler {
                 Blob blob=results.getBlob(1);
                 ByteArrayInputStream inputStream= (ByteArrayInputStream) blob.getBinaryStream();
                 BufferedImage bufferedImage =ImageIO.read(inputStream);
+//                getProfilePicResponse = new GetProfilePicResponse(bufferedImage);
                 ImageIcon imageIcon=new ImageIcon(bufferedImage);
                 getProfilePicResponse = new GetProfilePicResponse(imageIcon);
             }

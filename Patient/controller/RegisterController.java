@@ -3,9 +3,8 @@ package Patient.controller;
 
 import Patient.entity.Main;
 import Patient.request.RegisterRequest;
-import Patient.response.RegisterResponse;
+import Server.response.RegisterResponse;
 import Patient.util.HashUtil;
-import com.sun.net.httpserver.Request;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -72,11 +71,12 @@ public class RegisterController {
     }
 
     public void register(ActionEvent actionEvent) {
+        System.out.println("Processing registration request!");
         FXMLLoader loginLoader=new FXMLLoader(getClass().getResource("../fxml/Login.fxml"));
         if(passwordField.getText().equals(confirmPasswordField.getText())){
             RegisterRequest registerRequest=new RegisterRequest(firstNameField.getText(),lastNameField.getText(),emailIDField.getText(),
                     HashUtil.getMd5(passwordField.getText()),registrationNoField.getText());
-            Main.sendRequest((Request) registerRequest);
+            Main.sendRequest(registerRequest);
             System.out.println("Register request sent");
             RegisterResponse response=(RegisterResponse)Main.getResponse();
             assert response != null;

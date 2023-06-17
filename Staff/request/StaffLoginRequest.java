@@ -1,6 +1,5 @@
 package Staff.request;
 
-import com.example.dispensary_management_system.staff.request.Request;
 
 public class StaffLoginRequest extends Request {
         private String username;

@@ -1,33 +1,39 @@
 package Server.main;
 
+import Server.entity.Patient;
 import Server.entity.RegistrationStreamWrapper;
-import Server.request.*;
+import Patient.request.*;
 import Server.requestHandler.*;
 import Staff.request.ManageAppointmentRequest;
 
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
-import java.net.ServerSocket;
+//import java.net.ServerSocket;
 import java.net.Socket;
 
 public class RequestIdentifier implements Runnable{
     Socket socket;
     ObjectOutputStream oos=null;
     ObjectInputStream ois=null;
-    ServerSocket chatServerSocket;
+//    ServerSocket chatServerSocket;
     public String userID;
 
     /**
      * Constructor that takes multiple socket parameters and initialises the I/O streams accordingly
      * @param socket is used to create ObjectOutput/Input streams through which communication takes place
-     * @param chatServerSocket used to create a chat connection
-     */
+     *
+//     * @param chatServerSocket used to create a chat connection
 
-    public RequestIdentifier(Socket socket, ServerSocket chatServerSocket){
+     */
+//server chat socket disabled
+    public RequestIdentifier(Socket socket
+                             //,ServerSocket chatServerSocket
+    ){
         this.socket=socket;
-        this.chatServerSocket = chatServerSocket;
+//        this.chatServerSocket = chatServerSocket;
         try {
+            System.out.println("io streams instantiated in request identifier!");
             oos=new ObjectOutputStream(socket.getOutputStream());
             ois=new ObjectInputStream(socket.getInputStream());
         } catch (IOException e) {
@@ -46,10 +52,13 @@ public class RequestIdentifier implements Runnable{
 
     @Override
     public void run() {
+        System.out.println("New identifier thread started!");
         while(socket.isConnected()) {
             Object request;
             try {
+                System.out.println("Receiving request...");
                 request = Server.receiveRequest(ois);
+                System.out.println("Finding instance of request!");
             } catch (IOException | ClassNotFoundException e) {
                 e.printStackTrace();
                 break;
@@ -63,23 +72,25 @@ public class RequestIdentifier implements Runnable{
                 loginRequestHandler.sendResponse(userID);
 
                 //Once the login is successful we create the chat connection
-                if (loginRequestHandler.isLoginSuccessful()) {
-                    try {
-                        Socket chatSocket = chatServerSocket.accept();
-                        ObjectOutputStream objectOutputStream = new ObjectOutputStream(chatSocket.getOutputStream());
-                        ObjectInputStream objectInputStream = new ObjectInputStream(chatSocket.getInputStream());
+//                if (loginRequestHandler.isLoginSuccessful()) {
+//                    try {
+//                        Socket chatSocket = chatServerSocket.accept();
+//                        ObjectOutputStream objectOutputStream = new ObjectOutputStream(chatSocket.getOutputStream());
+//                        ObjectInputStream objectInputStream = new ObjectInputStream(chatSocket.getInputStream());
 
                         /****This Input is from the output stream from the message thread initiating method startMessageThread in Patient.LoginController****/
-                        String registrationNumber = (String) objectInputStream.readObject();
+//                        String registrationNumber = (String) objectInputStream.readObject();
 
                         // After chat connection is created we maintain an ArrayList of the userID and their respective
                         // Output streams
-                        Server.socketArrayList.add(new RegistrationStreamWrapper(registrationNumber, objectOutputStream));
-                    } catch (Exception e) {
-                        e.printStackTrace();
-                    }
-                }
+//                        Server.socketArrayList.add(new RegistrationStreamWrapper(registrationNumber, objectOutputStream));
+//                    } catch (Exception e) {
+//                        e.printStackTrace();
+//                    }
+//                }
+
             } else if (request instanceof RegisterRequest) {
+                System.out.println("Registration request being handled!");
                 RegisterRequestHandler registerRequestHandler = new RegisterRequestHandler((RegisterRequest) request, oos, Server.getConnection());
                 registerRequestHandler.sendResponse(userID);
             }else if(request instanceof GetNotificationRequest){
@@ -101,9 +112,10 @@ public class RequestIdentifier implements Runnable{
             else if(request instanceof LogOutRequest){
                 LogOutRequestHandler logOutRequestHandler=new LogOutRequestHandler(Server.getConnection(),oos);
                 logOutRequestHandler.sendResponse(userID);
-                deleteChatSocketConnection();
+//                deleteChatSocketConnection();
             }
             else if(request instanceof AppointmentListRequest){
+                System.out.println("Appointment list request being processed ...");
                 AppointmentListRequestHandler appointmentListRequestHandler = new AppointmentListRequestHandler(Server.getConnection(),oos);
                 appointmentListRequestHandler.sendResponse(userID);
             }
@@ -119,34 +131,38 @@ public class RequestIdentifier implements Runnable{
                 DutyChartRequestHandler dutyChartRequestHandler =  new DutyChartRequestHandler(Server.getConnection(),oos);
                 dutyChartRequestHandler.sendResponse(userID);
             }
-            else if(request instanceof ManageAppointmentRequest){
-                ManageAppointmentRequestHandler manageAppointmentRequestHandler = new ManageAppointmentRequestHandler(Server.getConnection(),oos,(ManageAppointmentRequest) request);
-                manageAppointmentRequestHandler.sendResponse(userID);
+//            else if(request instanceof ManageAppointmentRequest){
+//                ManageAppointmentRequestHandler manageAppointmentRequestHandler = new ManageAppointmentRequestHandler(Server.getConnection(),oos,(ManageAppointmentRequest) request);
+//                manageAppointmentRequestHandler.sendResponse(userID);
+//            }
+            else{
+                System.out.println("No instance found");
+
             }
 
         }
 
         System.out.println("Should have broken");
-        deleteChatSocketConnection();
+//        deleteChatSocketConnection();
     }
 
-    private void deleteChatSocketConnection() {
-        //Remove the OOS after disconnection
-        System.out.println(userID + " disconnected");
-        Server.socketArrayList.removeIf(r -> {
-
-            /**Any of staff or patient by userId disconnects */
-            if(r.getRegistrationNumber().equals(userID)) {
-                try {
-                    System.out.println("Sending disconnected to their oos");
-                    r.getOos().writeObject("disconnected");
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-                return true;
-            }
-            return false;
-        });
+//    private void deleteChatSocketConnection() {
+//        //Remove the OOS after disconnection
+//        System.out.println(userID + " disconnected");
+//        Server.socketArrayList.removeIf(r -> {
+//
+//            /**Any of staff or patient by userId disconnects */
+//            if(r.getRegistrationNumber().equals(userID)) {
+//                try {
+//                    System.out.println("Sending disconnected to their oos");
+//                    r.getOos().writeObject("disconnected");
+//                } catch (IOException e) {
+//                    e.printStackTrace();
+//                }
+//                return true;
+//            }
+//            return false;
+//        });
         /***delete chat for staff***/
 //        Server.staffSocketArrayList.removeIf(r-> {
 //            if(r.getStaffId().equals(userID)) {
@@ -160,5 +176,5 @@ public class RequestIdentifier implements Runnable{
 //            }
 //            return false;
 //        });
-    }
+//    }
 }

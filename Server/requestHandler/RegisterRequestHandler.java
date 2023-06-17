@@ -1,6 +1,6 @@
 package Server.requestHandler;
 
-import Server.request.RegisterRequest;
+import Patient.request.RegisterRequest;
 import Server.response.RegisterResponse;
 import Server.table.PatientTable;
 
@@ -22,7 +22,8 @@ public class RegisterRequestHandler extends RequestHandler{
     @Override
     public void sendResponse(String userID) {
         PreparedStatement preparedStatement;
-        File file=new File("");
+        System.out.println("Registration process invoked !");
+        File file=new File("Server/images/sample.png");
         FileInputStream fis;
         int result = 0;
         try {

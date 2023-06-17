@@ -1,6 +1,6 @@
 package Server.requestHandler;
 
-import Server.request.ChangePasswordRequest;
+import Patient.request.ChangePasswordRequest;
 import Server.response.ChangePasswordResponse;
 import Server.table.PatientTable;
 

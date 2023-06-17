@@ -2,7 +2,7 @@ package Patient.entity;
 
 import Patient.controller.LoginController;
 import Patient.controller.ProfileScreenController;
-import com.sun.net.httpserver.Request;
+import Patient.request.Request;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -60,7 +60,7 @@ public class Main extends Application {
         try {
             oos.writeObject(request);
             oos.flush();
-            System.out.println("Request.Request sent to server");
+            System.out.println("Request sent to server");
         } catch (IOException e) {
             e.printStackTrace();
         }
