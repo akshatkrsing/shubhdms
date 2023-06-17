@@ -1,13 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Accordion?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.Tab?>
 <?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TitledPane?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
@@ -45,7 +48,7 @@
             <children>
                 <TabPane prefHeight="531.0" prefWidth="682.0" side="LEFT" stylesheets="@../css/tabs.css" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                     <tabs>
-                        <Tab text="manage appointments">
+                        <Tab text="Manage">
                             <content>
                                 <AnchorPane>
                            <children>
@@ -68,13 +71,22 @@
                                 </AnchorPane>
                             </content>
                         </Tab>
-                        <Tab onSelectionChanged="#onNotificationsClicked" text="upload duty chart">
+                  <Tab text="Upcoming">
+                    <content>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <VBox prefHeight="200.0" prefWidth="100.0" />
+                           </children>
+                        </AnchorPane>
+                    </content>
+                  </Tab>
+                        <Tab onSelectionChanged="#onNotificationsClicked" text="Bulletins">
                             <content>
                                 <AnchorPane>
                                     <children>
-                                        <ScrollPane fx:id="notificationScrollPane" fitToHeight="true" fitToWidth="true" prefHeight="511.0" prefWidth="579.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                        <ScrollPane fx:id="notificationScrollPane" fitToHeight="true" fitToWidth="true" prefHeight="407.0" prefWidth="608.0" AnchorPane.bottomAnchor="124.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="9.0" AnchorPane.topAnchor="0.0">
                                             <content>
-                                                <VBox fx:id="notificationContainer" alignment="TOP_CENTER" fillWidth="false" prefHeight="511.0" prefWidth="535.0" spacing="10.0">
+                                                <VBox fx:id="notificationContainer" alignment="TOP_CENTER" fillWidth="false" prefHeight="383.0" prefWidth="598.0" spacing="10.0">
                                                     <padding>
                                                         <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                                                     </padding>
@@ -84,36 +96,61 @@
                                                 <Insets bottom="10.0" right="10.0" top="10.0" />
                                             </padding>
                                         </ScrollPane>
+                              <ImageView fitHeight="150.0" fitWidth="181.0" layoutX="435.0" layoutY="27.0" pickOnBounds="true" preserveRatio="true" />
+                              <Label alignment="CENTER" contentDisplay="CENTER" layoutY="409.0" prefHeight="27.0" prefWidth="191.0" style="-fx-background-color: #86c43f;" text="Add Image" textAlignment="CENTER" textFill="#216021">
+                                 <font>
+                                    <Font name="Artifakt Element Bold" size="18.0" />
+                                 </font>
+                              </Label>
+                              <ImageView fitHeight="99.0" fitWidth="140.0" layoutY="433.0" pickOnBounds="true" preserveRatio="true" />
+                              <Button layoutX="140.0" layoutY="436.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="52.0" style="-fx-background-color: #1a1c18;" text="Clear" textFill="WHITE">
+                                 <font>
+                                    <Font name="Artifakt Element Bold" size="12.0" />
+                                 </font>
+                              </Button>
+                              <Button layoutX="140.0" layoutY="484.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="52.0" style="-fx-background-color: #1a1c18;" text="Browse" textFill="WHITE">
+                                 <font>
+                                    <Font name="Artifakt Element Bold" size="10.0" />
+                                 </font>
+                              </Button>
+                              <TextArea layoutX="200.0" layoutY="437.0" prefHeight="94.0" prefWidth="224.0" promptText="Add Caption..." style="-fx-border-color: #0d0d0c;" />
+                              <TextField layoutX="200.0" layoutY="410.0" prefHeight="28.0" prefWidth="224.0" promptText="Add Topic..." style="-fx-border-color: #0d0d0c;" />
+                              <Button layoutX="474.0" layoutY="447.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="84.0" style="-fx-background-color: #1a1c18;" text="Post" textFill="WHITE">
+                                 <font>
+                                    <Font name="Artifakt Element Bold" size="12.0" />
+                                 </font>
+                              </Button>
                                     </children>
                                 </AnchorPane>
                             </content>
                         </Tab>
-                        <Tab text="manage bulletin">
+                        <Tab text="Duty Chart">
                             <content>
                                 <AnchorPane>
                                     <children>
-                                        <VBox alignment="CENTER" fillWidth="false" prefHeight="200.0" prefWidth="100.0" spacing="50.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-                                            <children>
-                                                <Label text="Enter the course code to join:   ">
-                                                    <font>
-                                                        <Font size="35.0" />
-                                                    </font>
-                                                </Label>
-                                                <TextField fx:id="enterCourseCodeTextField" prefHeight="66.0" prefWidth="450.0" promptText="Enter course code" VBox.vgrow="NEVER">
-                                                    <font>
-                                                        <Font size="30.0" />
-                                                    </font>
-                                                </TextField>
-                                                <Button fx:id="joinCourseButton" mnemonicParsing="false" onAction="#joinCourseButtonResponse" text="Join course">
-                                                    <font>
-                                                        <Font size="20.0" />
-                                                    </font>
-                                                </Button>
-                                            </children>
+                                        <VBox alignment="CENTER" fillWidth="false" prefHeight="531.0" prefWidth="409.0" spacing="50.0" style="-fx-border-color: #050505;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="200.0" AnchorPane.topAnchor="0.0">
                                             <padding>
                                                 <Insets left="20.0" right="20.0" top="40.0" />
                                             </padding>
                                         </VBox>
+                              <VBox layoutX="407.0" prefHeight="531.0" prefWidth="202.0" style="-fx-border-color: #050505;">
+                                 <children>
+                                    <Accordion prefHeight="591.0" prefWidth="205.0">
+                                      <panes>
+                                        <TitledPane animated="false" text="Actions">
+                                          <content>
+                                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                                          </content>
+                                        </TitledPane>
+                                        <TitledPane animated="false" text="Doctors">
+                                          <content>
+                                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                                          </content>
+                                        </TitledPane>
+                                      </panes>
+                                    </Accordion>
+                                 </children>
+                              </VBox>
                                     </children>
                                 </AnchorPane>
                             </content>

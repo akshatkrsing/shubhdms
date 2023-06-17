@@ -1,5 +1,6 @@
 package Staff.main;
 
+
 import Staff.controller.StaffLoginController;
 import Staff.controller.StaffProfileScreenController;
 
@@ -15,10 +16,8 @@ import java.io.ObjectOutputStream;
 import java.net.Socket;
 
 
-
-import Staff.request.Request;
 import Server.response.Response;
-import Staff.request.StaffRegisterRequest;
+import Staff.request.Request;
 
 public class StaffMain extends Application {
     public static Socket socket=null;
@@ -35,16 +34,17 @@ public class StaffMain extends Application {
     }
 
     @Override
-    public void start(Stage primaryStage){
+    public void start(Stage primaryStage) {
         System.out.println("Application invoked!");
-        FXMLLoader fxmlLoader=new FXMLLoader(getClass().getResource("../fxml/StaffLogin.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("../fxml/StaffLogin.fxml"));
         System.out.println("Login FXML Loaded!");
         try {
+
             System.out.println("Creating a new connection");
-            socket=new Socket("localhost",6970);
+            socket = new Socket("localhost", 6970);
             System.out.println(socket);
-            oos=new ObjectOutputStream(socket.getOutputStream());
-            ois=new ObjectInputStream(socket.getInputStream());
+            oos = new ObjectOutputStream(socket.getOutputStream());
+            ois = new ObjectInputStream(socket.getInputStream());
             System.out.println("Connection established and io streams created");
 
             System.out.println(Thread.currentThread());
@@ -56,30 +56,30 @@ public class StaffMain extends Application {
         primaryStage.setTitle("Sign In");
         try {
             primaryStage.setScene(new Scene(fxmlLoader.load()));
-            StaffLoginController login=fxmlLoader.getController();
-        } catch (IOException e) {
-            e.printStackTrace();
+            StaffLoginController login = fxmlLoader.getController();
+        } catch (IOException ex) {
+            throw new RuntimeException(ex);
         }
         primaryStage.show();
-
-    }
-    public static void sendRequest(Request request){
-        try {
-            oos.writeObject(request);
-            oos.flush();
-            System.out.println("Request sent to server");
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
-    public static Object getResponse(){
-        try {
-            System.out.println("response is sent on Main method");
-            return ois.readObject();
-        } catch (IOException | ClassNotFoundException e) {
-            e.printStackTrace();
-        }
-        return null;
     }
 
-}
+        public static void sendRequest(Request request){
+            try {
+                oos.writeObject(request);
+                oos.flush();
+                System.out.println("Request sent to server");
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+        public static Object getResponse(){
+            try {
+                System.out.println("response is sent on Main method");
+                return ois.readObject();
+            } catch (IOException | ClassNotFoundException e) {
+                e.printStackTrace();
+            }
+            return null;
+        }
+
+    }
