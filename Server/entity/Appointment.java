@@ -21,12 +21,22 @@ public class Appointment implements Serializable {
 
     private String fromTime;
     private String toTime;
+    private String userID;
+    private String appointmentID;
 
     public Appointment(String memo, Timestamp timestamp, String fromTime, String toTime){
         this.memo = memo;
         this.timestamp = timestamp;
         this.fromTime = fromTime;
         this.toTime = toTime;
+    }
+    public Appointment(String memo, Timestamp timestamp, String fromTime, String toTime,String userID, String appointmentID){
+        this.memo = memo;
+        this.timestamp = timestamp;
+        this.fromTime = fromTime;
+        this.toTime = toTime;
+        this.userID =userID;
+        this.appointmentID = appointmentID;
     }
 
     public Appointment(String doctorName, String doctorType, String memo, Blob blob, Timestamp timestamp,String fromTime,String toTime) {
@@ -44,6 +54,24 @@ public class Appointment implements Serializable {
         this.timestamp = timestamp;
         this.fromTime = fromTime;
         this.toTime = toTime;
+    }
+    public Appointment(String doctorName, String doctorType, String memo, Blob blob, Timestamp timestamp,String fromTime,String toTime, String userID, String appointmentID) {
+        this.doctor.setName(doctorName);
+        this.doctor.setType(doctorType);
+        try {
+            InputStream in = blob.getBinaryStream();
+            final BufferedImage bufferedImage = ImageIO.read(in);
+            this.doctor.setImage(SwingFXUtils.toFXImage(bufferedImage,null));
+        } catch (SQLException | IOException e) {
+            e.printStackTrace();
+        }
+
+        this.memo = memo;
+        this.timestamp = timestamp;
+        this.fromTime = fromTime;
+        this.toTime = toTime;
+        this.userID = userID;
+        this.appointmentID = appointmentID;
     }
 
     public void setStatus(int status) {
@@ -80,5 +108,13 @@ public class Appointment implements Serializable {
 
     public String getToTime() {
         return toTime;
+    }
+
+    public String getUserID() {
+        return userID;
+    }
+
+    public String getAppointmentID() {
+        return appointmentID;
     }
 }

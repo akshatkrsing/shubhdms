@@ -1,12 +1,8 @@
 package Server.request;
 
-import Staff.request.Request;
-import Staff.response.ManageAppointmentResponse;
-import javafx.scene.control.ComboBox;
+import java.io.Serializable;
 
-import java.time.LocalDate;
-
-public class ManageAppointmentRequest extends Request {
+public class ManageAppointmentRequest implements Serializable {
 
 String doctor;
     public ManageAppointmentRequest(String doctor) {

@@ -1,35 +1,96 @@
 package Staff.controller;
 
+import Server.response.ApproveAppointmentResponse;
+import Server.response.CancelAppointmentResponse;
+import Staff.main.StaffMain;
+import Staff.request.ApproveAppointmentRequest;
+import Staff.request.CancelAppointmentRequest;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.ComboBox;
-import javafx.scene.control.DatePicker;
-import javafx.scene.control.Label;
+import javafx.fxml.Initializable;
+import javafx.scene.control.*;
+import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.FlowPane;
 import javafx.scene.layout.HBox;
+import javafx.scene.layout.VBox;
 
-public class AppointmentCardController {
+import javax.swing.*;
+import java.net.URL;
+import java.sql.Timestamp;
+import java.util.ResourceBundle;
+
+public class AppointmentCardController implements Initializable {
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+
+    }
+    @FXML
+    AnchorPane cardAnchor;
 
     @FXML
-    DatePicker date;
+    Label preferredDate;
 
     @FXML
-    ComboBox<?> docDropDown;
+    Label preferredFrom;
 
     @FXML
-    Label endTimelabel;
-
+    Label preferredTo;
     @FXML
-    HBox manageapphbox;
-
+    Label ID;
     @FXML
-    Label memolable;
-
+    Label memo;
     @FXML
-    Label patientIDlabel;
-
+    Label appointmentTimestamp;
     @FXML
-    Label patientNamelabel;
-
+    Label doctorPicker;
     @FXML
-    Label startTimeLabel;
+    Button close;
+    @FXML
+    Button cancel;
+    @FXML
+    Button approve;
+    @FXML
+    TextField fromTime;
+    @FXML
+    TextField toTime;
+    @FXML
+    VBox doctorListContainer;
+    @FXML
+    Label appointmentID;
+
+
+    public void expandMemo(ActionEvent actionEvent) {
+        JOptionPane.showMessageDialog(null,memo.getText());
+    }
+
+    public void removeCard(ActionEvent actionEvent) {
+       FlowPane flowPane = (FlowPane)cardAnchor.getParent();
+       flowPane.getChildren().remove(cardAnchor);
+    }
+
+    public void cancelAppointment(ActionEvent actionEvent) {
+        StaffMain.sendRequest(new CancelAppointmentRequest(appointmentTimestamp.getText(),ID.getText()));
+        CancelAppointmentResponse cancelAppointmentResponse = (CancelAppointmentResponse)StaffMain.getResponse();
+        assert cancelAppointmentResponse!= null;
+        if(cancelAppointmentResponse.getResponse().equals("Successful")) {
+            JOptionPane.showMessageDialog(null,"Appointment cancelled successfully!");
+        }
+        else {
+            JOptionPane.showMessageDialog(null,"Some error occurred.");
+        }
+    }
+
+    public void approveAppointment(ActionEvent actionEvent) {
+        StaffMain.sendRequest(new ApproveAppointmentRequest(appointmentID.getText(),ID.getText(),fromTime.getText(), toTime.getText(), doctorPicker.getText()));
+        ApproveAppointmentResponse approveAppointmentResponse = (ApproveAppointmentResponse)StaffMain.getResponse();
+        assert approveAppointmentResponse!= null;
+        if(approveAppointmentResponse.getResponse().equals("Successful")) {
+            JOptionPane.showMessageDialog(null,"Appointment approved successfully!");
+        }
+        else {
+            JOptionPane.showMessageDialog(null,"Some error occurred.");
+        }
+    }
+
 
 }

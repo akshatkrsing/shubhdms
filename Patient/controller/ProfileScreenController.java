@@ -163,7 +163,7 @@ public class ProfileScreenController implements Initializable {
             fis.read(imageArray);
             fis.close();
             ChangeProfilePicRequest changeProfilePicRequest = new ChangeProfilePicRequest(imageArray);
-            Main.sendRequest((Request) changeProfilePicRequest);
+            Main.sendRequest(changeProfilePicRequest);
             System.out.println("profile pic Request sent ");
             ChangeProfilePicResponse changeProfilePicResponse = (ChangeProfilePicResponse) Main.getResponse();
             System.out.println("response profile pic "+ changeProfilePicResponse);
@@ -187,7 +187,7 @@ public class ProfileScreenController implements Initializable {
     private Button logOutButton;
     public void logOutButtonResponse() {
         LogOutRequest logOutRequest = new LogOutRequest();
-        Main.sendRequest((Request) logOutRequest);
+        Main.sendRequest(logOutRequest);
         LogOutResponse logOutResponse = (LogOutResponse)Main.getResponse();
         assert logOutResponse != null;
         System.out.println("Response received ");

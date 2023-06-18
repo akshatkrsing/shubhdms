@@ -1,10 +1,15 @@
 package Server.main;
 
+import Patient.request.ChangePasswordRequest;
+import Patient.request.ChangeProfilePicRequest;
+import Patient.request.GetNotificationRequest;
+import Patient.request.GetProfilePicRequest;
+import Patient.request.LogOutRequest;
 import Server.entity.Patient;
 import Server.entity.RegistrationStreamWrapper;
 import Patient.request.*;
 import Server.requestHandler.*;
-import Staff.request.ManageAppointmentRequest;
+import Staff.request.*;
 
 import java.io.IOException;
 import java.io.ObjectInputStream;
@@ -88,12 +93,12 @@ public class RequestIdentifier implements Runnable{
 //                        e.printStackTrace();
 //                    }
 //                }
-
             } else if (request instanceof RegisterRequest) {
                 System.out.println("Registration request being handled!");
                 RegisterRequestHandler registerRequestHandler = new RegisterRequestHandler((RegisterRequest) request, oos, Server.getConnection());
                 registerRequestHandler.sendResponse(userID);
-            }else if(request instanceof GetNotificationRequest){
+            }
+            else if(request instanceof GetNotificationRequest){
                 GetNotificationRequestHandler getNotificationRequestHandler=new GetNotificationRequestHandler(Server.getConnection(), oos);
                 getNotificationRequestHandler.sendResponse(userID);
             }
@@ -131,13 +136,29 @@ public class RequestIdentifier implements Runnable{
                 DutyChartRequestHandler dutyChartRequestHandler =  new DutyChartRequestHandler(Server.getConnection(),oos);
                 dutyChartRequestHandler.sendResponse(userID);
             }
-//            else if(request instanceof ManageAppointmentRequest){
-//                ManageAppointmentRequestHandler manageAppointmentRequestHandler = new ManageAppointmentRequestHandler(Server.getConnection(),oos,(ManageAppointmentRequest) request);
-//                manageAppointmentRequestHandler.sendResponse(userID);
-//            }
+            else if(request instanceof CancelAppointmentRequest){
+                CancelAppointmentRequestHandler cancelAppointmentRequestHandler = new CancelAppointmentRequestHandler(Server.getConnection(),oos,(CancelAppointmentRequest)request);
+                cancelAppointmentRequestHandler.sendResponse(userID);
+            }
+            else if(request instanceof ApproveAppointmentRequest){
+                ApproveAppointmentRequestHandler approveAppointmentRequestHandler = new ApproveAppointmentRequestHandler(Server.getConnection(), oos,(ApproveAppointmentRequest)request);
+                approveAppointmentRequestHandler.sendResponse(userID);
+            }
+            else if(request instanceof StaffAppointmentListRequest){
+                StaffAppointmentListRequestHandler staffAppointmentListRequestHandler = new StaffAppointmentListRequestHandler(Server.getConnection(),oos);
+                staffAppointmentListRequestHandler.sendResponse(userID);
+            }
+            else if(request instanceof UpcomingListRequest){
+                UpcomingListRequestHandler upcomingListRequestHandler = new UpcomingListRequestHandler(Server.getConnection(),oos);
+                upcomingListRequestHandler.sendResponse(userID);
+            }
             else{
                 System.out.println("No instance found");
-
+                try {
+                    oos.writeObject(null);
+                } catch (IOException e) {
+                    throw new RuntimeException(e);
+                }
             }
 
         }

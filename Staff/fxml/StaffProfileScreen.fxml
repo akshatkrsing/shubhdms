@@ -14,6 +14,7 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.FlowPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
@@ -52,21 +53,7 @@
                             <content>
                                 <AnchorPane>
                            <children>
-                              <VBox prefHeight="534.0" prefWidth="651.0">
-                                 <children>
-                                    <AnchorPane prefHeight="23.0" prefWidth="654.0">
-                                       <children>
-                                          <Label fx:id="patientIDLb" alignment="CENTER" layoutY="2.0" prefHeight="30.0" prefWidth="78.0" style="-fx-border-color: blue;" text="Patient ID" textAlignment="CENTER" textFill="#1c4dec" />
-                                          <Label fx:id="patentNamelb" alignment="CENTER" layoutX="78.0" layoutY="2.0" prefHeight="30.0" prefWidth="86.0" style="-fx-border-color: blue;" text="Patient Name" textAlignment="CENTER" textFill="#1c4dec" />
-                                          <Label fx:id="dateLb" alignment="CENTER" layoutX="164.0" layoutY="2.0" prefHeight="30.0" prefWidth="74.0" style="-fx-border-color: blue;" text="Date" textAlignment="CENTER" textFill="#1c4dec" />
-                                          <Label fx:id="sTimeLb" alignment="CENTER" layoutX="237.0" layoutY="2.0" prefHeight="30.0" prefWidth="80.0" style="-fx-border-color: blue;" text="Start Time" textAlignment="CENTER" textFill="#1c4dec" />
-                                          <Label fx:id="eTimeLb" alignment="CENTER" layoutX="317.0" layoutY="2.0" prefHeight="30.0" prefWidth="78.0" style="-fx-border-color: blue;" text="End Time" textAlignment="CENTER" textFill="#1c4dec" />
-                                          <Label fx:id="memoLb" alignment="CENTER" layoutX="395.0" layoutY="2.0" prefHeight="30.0" prefWidth="134.0" style="-fx-border-color: blue;" text="Memo" textAlignment="CENTER" textFill="#1c4dec" />
-                                          <Label fx:id="chooseDocLb" alignment="CENTER" layoutX="528.0" layoutY="2.0" prefHeight="30.0" prefWidth="127.0" style="-fx-border-color: blue;" text="Choose Doc" textAlignment="CENTER" textFill="#1c4dec" />
-                                       </children>
-                                    </AnchorPane>
-                                 </children>
-                              </VBox>
+                              <FlowPane fx:id="appointmentContainer" maxWidth="1000.0" prefHeight="531.33333" prefWidth="606.66666" />
                            </children>
                                 </AnchorPane>
                             </content>
@@ -75,7 +62,7 @@
                     <content>
                       <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                            <children>
-                              <VBox prefHeight="200.0" prefWidth="100.0" />
+                              <FlowPane fx:id="upcomingContainer" maxWidth="1000.0" prefHeight="531.333" prefWidth="606.66" />
                            </children>
                         </AnchorPane>
                     </content>

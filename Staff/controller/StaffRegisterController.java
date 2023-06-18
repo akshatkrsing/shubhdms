@@ -1,10 +1,8 @@
 package Staff.controller;
 
-
-
-//import Patient.entity.Main;
+import Patient.request.RegisterRequest;
 import Patient.util.HashUtil;
-import Server.request.RegisterRequest;
+import Staff.main.StaffMain;
 import Staff.response.RegisterResponse;
 
 import javafx.event.ActionEvent;
@@ -75,26 +73,26 @@ public class StaffRegisterController {
 
     public void register(ActionEvent actionEvent) {
         FXMLLoader loginLoader=new FXMLLoader(getClass().getResource("../fxml/StaffLogin.fxml"));
-//        if(passwordField.getText().equals(confirmPasswordField.getText())){
-//            RegisterRequest registerRequest=new RegisterRequest(firstNameField.getText(),lastNameField.getText(),emailIDField.getText(),
-//                    HashUtil.getMd5(passwordField.getText()),staffIDField.getText());
-//            Main.sendRequest(registerRequest);
-//            System.out.println("Register request sent");
-//            RegisterResponse response=(RegisterResponse)Main.getResponse();
-//            assert response != null;
-//            if(response.getMessage().length()==0) System.out.println("Please Try Again");
-//            else {
-//                Stage stage=(Stage)registerButton.getScene().getWindow();
-//                Scene scene=null;
-//                try {
-//                    scene=new Scene(loginLoader.load());
-//                } catch (IOException e) {
-//                    e.printStackTrace();
-//                }
-//                stage.setTitle("Login");
-//                stage.setScene(scene);
-//            }
-//        }
-//        else System.out.println("Please enter correct info");
+        if(passwordField.getText().equals(confirmPasswordField.getText())){
+            RegisterRequest registerRequest=new RegisterRequest(firstNameField.getText(),lastNameField.getText(),emailIDField.getText(),
+                    HashUtil.getMd5(passwordField.getText()),staffIDField.getText());
+            StaffMain.sendRequest(registerRequest);
+            System.out.println("Register request sent");
+            RegisterResponse response=(RegisterResponse)StaffMain.getResponse();
+            assert response != null;
+            if(response.getMessage().length()==0) System.out.println("Please Try Again");
+            else {
+                Stage stage=(Stage)registerButton.getScene().getWindow();
+                Scene scene=null;
+                try {
+                    scene=new Scene(loginLoader.load());
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+                stage.setTitle("Login");
+                stage.setScene(scene);
+            }
+        }
+        else System.out.println("Please enter correct info");
     }
 }
