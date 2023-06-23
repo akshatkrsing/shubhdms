@@ -63,11 +63,11 @@ public class StaffRegisterController {
     public void checkIfMatches(ActionEvent actionEvent) {
         if(passwordField.getText().equals(confirmPasswordField.getText())){
             check=true;
-            matchLabel.setText("Passwords Match");
+            matchLabel.setText("Passwords Match!");
         }
         else {
             check=false;
-            matchLabel.setText("Passwords don't match");
+            matchLabel.setText("Passwords don't match!");
         }
     }
 
