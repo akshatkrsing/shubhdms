@@ -7,24 +7,76 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
-
-<AnchorPane fx:id="registerPane" prefHeight="590.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Staff.controller.StaffRegisterController">
-    <Button fx:id="registerButton" layoutX="254.0" layoutY="319.0" mnemonicParsing="false" onAction="#register" text="Register" />
-    <Hyperlink fx:id="loginLink" layoutX="212.0" layoutY="363.0" onAction="#switchToLogin" text="Already have an account?" textFill="#130000" underline="true" />
-    <Label fx:id="signupLabel" layoutX="236.0" layoutY="43.0" text="Sign Up">
-        <font>
-            <Font size="27.0" />
-        </font>
-    </Label>
-    <TextField fx:id="firstNameField" layoutX="88.0" layoutY="129.0" prefHeight="26.0" prefWidth="196.0" promptText="First Name" />
-    <TextField fx:id="lastNameField" layoutX="301.0" layoutY="129.0" prefHeight="26.0" prefWidth="196.0" promptText="Last Name" />
-    <TextField fx:id="teacherIDField" layoutX="88.0" layoutY="187.0" prefHeight="26.0" prefWidth="196.0" promptText="Staff ID" />
-    <PasswordField fx:id="passwordField" layoutX="88.0" layoutY="244.0" prefHeight="26.0" prefWidth="196.0" promptText="Password" />
-    <PasswordField fx:id="confirmPasswordField" layoutX="301.0" layoutY="244.0" onAction="#checkIfMatches" prefHeight="26.0" prefWidth="196.0" promptText="Confirm Password" />
-    <TextField fx:id="emailIDField" layoutX="301.0" layoutY="187.0" prefHeight="26.0" prefWidth="196.0" promptText="Email ID" />
-    <Label fx:id="matchLabel" layoutX="273.0" layoutY="269.0">
-        <font>
-            <Font size="10.0" />
-        </font>
-    </Label>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.geometry.Insets?>
+<AnchorPane fx:id="registerPane" prefHeight="354.0" prefWidth="430.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Staff.controller.StaffRegisterController">
+    <VBox alignment="CENTER" layoutX="88.0" layoutY="129.0" spacing="20.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <children>
+            <Label fx:id="signupLabel" text="Sign Up">
+                <font>
+                    <Font size="27.0" />
+                </font>
+            </Label>
+            <HBox alignment="CENTER">
+                <children>
+                    <TextField fx:id="firstNameField" promptText="First Name">
+                        <HBox.margin>
+                            <Insets right="10.0" />
+                        </HBox.margin>
+                    </TextField>
+                    <TextField fx:id="lastNameField" promptText="Last Name" />
+                </children>
+                <VBox.margin>
+                    <Insets left="5.0" right="5.0" />
+                </VBox.margin>
+                <padding>
+                    <Insets left="5.0" right="5.0" />
+                </padding>
+            </HBox>
+            <HBox alignment="CENTER">
+                <children>
+                    <TextField fx:id="staffIDField" promptText="Registration Number">
+                        <HBox.margin>
+                            <Insets right="10.0" />
+                        </HBox.margin>
+                    </TextField>
+                    <TextField fx:id="emailIDField" promptText="Email ID" />
+                </children>
+            </HBox>
+            <HBox alignment="CENTER">
+                <children>
+                    <PasswordField fx:id="passwordField" promptText="Password">
+                        <HBox.margin>
+                            <Insets right="10.0" />
+                        </HBox.margin>
+                    </PasswordField>
+                    <PasswordField fx:id="confirmPasswordField" onAction="#checkIfMatches" promptText="Confirm Password" />
+                </children>
+            </HBox>
+            <Button fx:id="registerButton" mnemonicParsing="false" onAction="#register" text="Register" />
+            <Hyperlink fx:id="loginLink" onAction="#switchToLogin" text="Already have an account?" textFill="#130000" underline="true" />
+        </children>
+    </VBox>
 </AnchorPane>
+
+<!--<AnchorPane fx:id="registerPane" prefHeight="590.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Staff.controller.StaffRegisterController">-->
+<!--    <Button fx:id="registerButton" layoutX="254.0" layoutY="319.0" mnemonicParsing="false" onAction="#register" text="Register" />-->
+<!--    <Hyperlink fx:id="loginLink" layoutX="212.0" layoutY="363.0" onAction="#switchToLogin" text="Already have an account?" textFill="#130000" underline="true" />-->
+<!--    <Label fx:id="signupLabel" layoutX="236.0" layoutY="43.0" text="Sign Up">-->
+<!--        <font>-->
+<!--            <Font size="27.0" />-->
+<!--        </font>-->
+<!--    </Label>-->
+<!--    <TextField fx:id="firstNameField" layoutX="88.0" layoutY="129.0" prefHeight="26.0" prefWidth="196.0" promptText="First Name" />-->
+<!--    <TextField fx:id="lastNameField" layoutX="301.0" layoutY="129.0" prefHeight="26.0" prefWidth="196.0" promptText="Last Name" />-->
+<!--    <TextField fx:id="teacherIDField" layoutX="88.0" layoutY="187.0" prefHeight="26.0" prefWidth="196.0" promptText="Staff ID" />-->
+<!--    <PasswordField fx:id="passwordField" layoutX="88.0" layoutY="244.0" prefHeight="26.0" prefWidth="196.0" promptText="Password" />-->
+<!--    <PasswordField fx:id="confirmPasswordField" layoutX="301.0" layoutY="244.0" onAction="#checkIfMatches" prefHeight="26.0" prefWidth="196.0" promptText="Confirm Password" />-->
+<!--    <TextField fx:id="emailIDField" layoutX="301.0" layoutY="187.0" prefHeight="26.0" prefWidth="196.0" promptText="Email ID" />-->
+<!--    <Label fx:id="matchLabel" layoutX="273.0" layoutY="269.0">-->
+<!--        <font>-->
+<!--            <Font size="10.0" />-->
+<!--        </font>-->
+<!--    </Label>-->
+<!--</AnchorPane>-->

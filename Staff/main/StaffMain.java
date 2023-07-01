@@ -14,15 +14,6 @@ import java.io.ObjectOutputStream;
 import java.net.Socket;
 
 public class StaffMain extends Application {
-//    private static String staffId = "";
-//    private static String staffName = "";
-//    public static ObjectOutputStream outputStream;
-//    public static ObjectInputStream inputStream;
-//    public static VBox chatVBox = null;
-//    public static String lastOpenCourseId = null;
-//    public static final String myColor = "#f55f78";
-//    public static final String otherColor = "#bee2f7";
-//    public static Object tempHolder = null;
 
     public static Socket socket=null;
     public static ObjectInputStream ois=null;
@@ -36,9 +27,9 @@ public class StaffMain extends Application {
     }
 
     @Override
-    public void start(Stage primaryStage) throws Exception {
+    public void start(Stage primaryStage) throws Exception{
         System.out.println("Application invoked!");
-        FXMLLoader fxmlLoader=new FXMLLoader(getClass().getResource("../fxml/Login.fxml"));
+        FXMLLoader fxmlLoader=new FXMLLoader(getClass().getResource("../fxml/StaffLogin.fxml"));
         System.out.println("Login FXML Loaded!");
         try {
             System.out.println("Creating a new connection");

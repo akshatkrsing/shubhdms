@@ -4,21 +4,23 @@ import Patient.request.ChangePasswordRequest;
 import Patient.request.ChangeProfilePicRequest;
 import Patient.request.GetProfilePicRequest;
 import Patient.request.LogOutRequest;
-import Staff.request.*;
 import Server.entity.Appointment;
 import Server.response.*;
 import Staff.main.StaffMain;
+import Staff.request.StaffAppointmentListRequest;
+import Staff.request.UpcomingListRequest;
 import Staff.util.HashUtil;
 import javafx.embed.swing.SwingFXUtils;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Scene;
-import javafx.scene.control.*;
+import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.control.PasswordField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.FlowPane;
-import javafx.scene.layout.VBox;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 import sun.awt.image.ToolkitImage;
@@ -190,6 +192,8 @@ public class ProfileScreenController {
             int i = 1;
             for (Appointment appointment : appointmentArrayList) {
                 FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("../fxml/appointmentCard.fxml"));
+
+                System.out.println("loaded ");
                 try {
                     Node node = fxmlLoader.load();
                     AppointmentCardController appointmentCardController = fxmlLoader.getController();

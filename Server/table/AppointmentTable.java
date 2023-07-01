@@ -25,4 +25,5 @@ public class AppointmentTable {
             "=? AND "+COLUMN_APPOINTMENT_ID+"=?;";
     public static final String QUERY_FETCH_PENDING = "SELECT * FROM "+TABLE_NAME+" WHERE "+COLUMN_APPOINTMENT_STATUS+"=0;";
     public static final String QUERY_FETCH_APPROVED = "SELECT * FROM "+TABLE_NAME+" WHERE "+COLUMN_APPOINTMENT_STATUS+"=1;";;
+
 }

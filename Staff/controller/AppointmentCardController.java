@@ -20,6 +20,17 @@ import java.sql.Timestamp;
 import java.util.ResourceBundle;
 
 public class AppointmentCardController implements Initializable {
+    @FXML
+    public Label sTimeLb;
+    @FXML
+    public Label dateLb;
+    @FXML
+    public Label patientIDLb;
+    @FXML
+    public Label eTimeLb;
+    @FXML
+    public TitledPane selectTimeTiTlePane;
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 

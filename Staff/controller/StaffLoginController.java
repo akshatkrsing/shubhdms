@@ -41,7 +41,7 @@ public class StaffLoginController implements Initializable {
         else{
             StaffMain.staffID = String.valueOf(response.getRegistrationNo());
 
-            FXMLLoader homepageLoader= new FXMLLoader(getClass().getResource("../fxml/ProfileScreen.fxml"));
+            FXMLLoader homepageLoader= new FXMLLoader(getClass().getResource("../fxml/StaffProfileScreen.fxml"));
             Stage currentStage=(Stage)loginButton.getScene().getWindow();
             Scene scene=null;
             try {

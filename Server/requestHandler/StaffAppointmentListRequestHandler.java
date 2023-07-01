@@ -24,10 +24,12 @@ public class StaffAppointmentListRequestHandler extends RequestHandler{
     @Override
     public void sendResponse(String userID) {
         ArrayList<Appointment> appointmentArrayList=new ArrayList<>();
+        ResultSet resultSet;
         try{
             PreparedStatement preparedStatement = connection.prepareStatement(AppointmentTable.QUERY_FETCH_PENDING);
+
             System.out.println(preparedStatement);
-            ResultSet resultSet = preparedStatement.executeQuery();
+            resultSet = preparedStatement.executeQuery();
             while (resultSet.next()){
                 System.out.println("Result set is not empty!");
                     appointmentArrayList.add(
@@ -39,7 +41,9 @@ public class StaffAppointmentListRequestHandler extends RequestHandler{
                                     resultSet.getString(AppointmentTable.COLUMN_REGISTRATION_NUMBER),
                                     resultSet.getString(AppointmentTable.COLUMN_APPOINTMENT_ID)
                             )
+                            
                     );
+                System.out.println(appointmentArrayList);
             }
             oos.writeObject(new StaffAppointmentListResponse(appointmentArrayList));
             oos.flush();

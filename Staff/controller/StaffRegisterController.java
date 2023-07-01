@@ -3,7 +3,7 @@ package Staff.controller;
 import Patient.request.RegisterRequest;
 import Patient.util.HashUtil;
 import Staff.main.StaffMain;
-import Staff.response.RegisterResponse;
+import Server.response.RegisterResponse;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;

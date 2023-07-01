@@ -73,7 +73,7 @@ public class Server {
 
             String url="jdbc:mysql://localhost:3306/dms";
 
-            connection= DriverManager.getConnection(url,"root","XZMeE2M3v-Jno9P");
+            connection= DriverManager.getConnection(url,"root","@Abhiveer18");
             System.out.println("Database connected!!");
         } catch (ClassNotFoundException | SQLException e) {
             e.printStackTrace();
